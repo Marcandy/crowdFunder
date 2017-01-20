@@ -1,7 +1,13 @@
 import React from "react";
+import Test from './Test';
 
-export default () => {
-  return (
-    <h1>Hello World</h1>
-  )
+ class App extends React.Component {
+  render() {
+    return (
+      <Test />
+    )
+  }
+
 }
+
+export default App;
