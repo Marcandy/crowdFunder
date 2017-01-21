@@ -1,33 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router';
-import "materialize-css"
+// import "materialize-css"
 
 // import getMuiTheme from 'material-ui/styles/getMuiTheme';
-// import Appbar from 'material-ui/AppBar';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
 
+const bc = {
+  color: "white"
+}
 
 export default () => {
+  // iconElementLeft={<IconButton><NavigationClose /></IconButton>}
   return (
+    <AppBar
+    title={<span>crowdFunder</span>}
 
-<nav>
-  <div className="nav-wrapper">
-    <a href="#!" className="brand-logo"><i className="material-icons">cloud</i>Logo</a>
-    <ul className="right hide-on-med-and-down">
+    iconElementRight={
+    <div>
+      <Link to="/">
+        <IconButton
+           iconClassName="material-icons"
+           iconStyle={bc}
+         >
+           view_module
 
-      <li><Link to="/"><i className="material-icons">view_module </i></Link></li>
-
-
-
-
-
-           <li><Link to="/signup"><i className="material-icons">vperson_pin </i></Link></li>
-
+        </IconButton>
+      </Link>
 
 
+      <Link to="/signup">
+        <IconButton
+           iconClassName="material-icons"
+           iconStyle={bc}
+         >
+           account_circle
+         </IconButton>
+      </Link>
 
-    </ul>
-  </div>
-</nav>
+   </div>
+    }
+  />
+// <nav>
+//   <div className="nav-wrapper">
+//     <a href="#!" className="brand-logo"><i className="material-icons">cloud</i>Logo</a>
+//     <ul className="right hide-on-med-and-down">
+//
+//       <li><Link to="/"><i className="material-icons">view_module </i></Link></li>
+//
+//
+//
+//
+//
+//            <li><Link to="/signup"><i className="material-icons">vperson_pin </i></Link></li>
+//
+//
+//
+//
+//     </ul>
+//   </div>
+// </nav>
 
     // <nav className="navbar navbar-default">
     //   <div className="container-fluid">
