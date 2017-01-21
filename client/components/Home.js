@@ -1,6 +1,6 @@
 import React from "react";
 
- export default class App extends React.Component {// will kinda a presentation and functional
+ export default class Home extends React.Component {// will kinda a presentation and functional
                                           // with grid of project-each are component
   render() {
     return (
