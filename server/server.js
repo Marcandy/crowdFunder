@@ -1,12 +1,17 @@
 import express from 'express';
 import path from 'path'
+import bodyParser from 'body-parser';
 
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev';
+import usersCtrl from './controllers/usersCtrl';
 
-let app = express();
+let app = module.exports = express();
+app.use(bodyParser.json());
+
+app.post('/api/users', usersCtrl.create)
 
 const compiler = webpack(webpackConfig);
 
