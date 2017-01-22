@@ -3,6 +3,7 @@ import React from 'react';
 
 import timezones from '../../data/timezones';
 import map from 'lodash/map'; // inorder to map throguh arrays too
+import axios from 'axios';
 
 export default class SignupForm extends React.Component {
 
@@ -25,13 +26,13 @@ export default class SignupForm extends React.Component {
   }
 
   onSubmit(e) {
-    e.preventDefault();
-    console.log(this.state);
+    e.preventDefault(); // store the function on props which will make the request
+    this.props.userSignupRequest(this.state)
   }
 
   render() {
 
-    let options = map(timezones, (val, key) => 
+    let options = map(timezones, (val, key) =>
       <option key={val} value={val}>{key}</option>
     );
 
@@ -107,3 +108,5 @@ export default class SignupForm extends React.Component {
     )
   }
 }
+
+ 
