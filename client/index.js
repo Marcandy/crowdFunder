@@ -2,7 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import { Provider} from 'react-redux';
 import  thunk  from 'redux-thunk';
-import {createStore, applyMiddleware  } from 'redux';
+import {createStore, applyMiddleware, compose  } from 'redux';
+import rootReducer from './rootReducer';
 
 import { Router, browserHistory } from "react-router";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -15,8 +16,11 @@ injectTapEventPlugin();
 
 
 let store = createStore(
-  (state = {}) => state,
-  applyMiddleware(thunk)
+  rootReducer, //setting combine reducers
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 )
 
 import routes from './routes';
