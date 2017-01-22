@@ -1,5 +1,5 @@
 import {ADD_FLASH_MESSAGE} from '../actions/types';
-import shortid from  'shortid';
+import shortid from  'shortid'; //auto generate id
 
 export default (state = [], action = {}) => {
   switch (action.type) {

@@ -4,6 +4,7 @@ import Nav from './Nav';
 // import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 // import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+import FlashMessagesList from './flash/FlashMessagesList';
 
  class App extends React.Component {// main component that will Nav and subsequent component
                                     // which will be passed as children props
@@ -20,6 +21,7 @@ import Nav from './Nav';
       // </MuiThemeProvider>
       <div className="container">
          <Nav />
+         <FlashMessagesList />
         {this.props.children}
       </div>
     )
