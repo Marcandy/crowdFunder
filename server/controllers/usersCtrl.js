@@ -7,12 +7,13 @@ import validateInput from '../shared/validations/signup';
 module.exports = {
 
 
-    create: function create(req, res, next) {
-      const { errors, isValid } = validateInput(req.body);
+    create: (req, res) => {
+      let { errors, isValid } = validateInput(req.body);
 
-        if (!isValid) {
+        if (isValid) {
+          res.json({ success: true });
+        } else {
           res.status(400).json(errors);
         }
-  }
-
+      }
 };
