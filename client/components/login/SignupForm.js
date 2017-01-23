@@ -196,7 +196,7 @@ class SignupForm extends React.Component {
     );
     return (
       <form onSubmit={this.onSubmit}>
-        <h1>Join our community!</h1>
+        <h1>Start CrowdFunding!</h1>
 
         <TextFieldGroup
           error={errors.username}
