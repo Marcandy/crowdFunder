@@ -17,7 +17,7 @@ export default () => {
   // iconElementLeft={<IconButton><NavigationClose /></IconButton>}
   return (
     <AppBar
-    title={<span>crowdFunder</span>}
+    title={<span>crowddssFunder</span>}
 
     iconElementRight={
     <div>

@@ -1,3 +1,4 @@
+import './login.scss'
 // import React from 'react';
 // // import TextField from 'material-ui/TextField';
 //
@@ -16,8 +17,9 @@
 //     this.state = {
 //       username: '',
 //       email: '',
-//       password: '',
+//       password: '',devtool:'inline-source-map',
 //       passwordConfirmation: '',
+
 //       timezone: '',
 //       errors: {},
 //       isLoading: false
@@ -109,12 +111,7 @@
 //             value={this.state.timezone}
 //           >
 //             <option value="" disabled>Choose Your Timezone</option>
-//             {options}
-//           </select>
-//           {errors.timezone && <span className="help-block">{errors.timezone}</span>}
-//         </div>
-//
-//         <div className="form-group">
+//             {options}      <div className="form-group">
 //           <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
 //             Sign up
 //           </button>
@@ -195,8 +192,8 @@ class SignupForm extends React.Component {
       <option key={val} value={val}>{key}</option>
     );
     return (
-      <form onSubmit={this.onSubmit}>
-        <h1>Start CrowdFunding!</h1>
+      <form className='bo' onSubmit={this.onSubmit}>
+        <h1>Start Funding!</h1>
 
         <TextFieldGroup
           error={errors.username}
