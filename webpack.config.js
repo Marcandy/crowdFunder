@@ -6,12 +6,12 @@ module.exports = {
   entry:[
     'webpack-dev-server/client?http://127.0.0.1:8080/',
     'webpack/hot/only-dev-server',
-    './client/index.js'
+    './client'
   ],
 
   output: {
     // path.join(__dirname, 'bundle'),
-    path: __dirname,
+    path: path.join(__dirname, 'build'),
     publicPath: '/',
      filename: "bundle.js"
   },
@@ -32,21 +32,26 @@ module.exports = {
         //   path.join(__dirname, 'server/shared'),
         //   path.join(__dirname, 'server')
         // ],
-        loaders: [ 'react-hot', 'babel']
+        loaders: [ 'babel']
       },
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
-      }
+      },
+      {test:/\.(jpg|png)$/, loader:"file-loader"},
+    //       {
+    //     test: /\.png$/,
+    //     loader: "url-loader"
+    // }
     ]
 
   },
   resolve: {
-      extensions: ["", ".js", ".css"]
+      extensions: ["", ".js", ".css", ".jpg", ".png"]
   }
 
   ,devServer: {
-		contentBase: './'
+		contentBase: './build'
 		, historyApiFallback: true
 	}
 }
