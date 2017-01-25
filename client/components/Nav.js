@@ -17,11 +17,21 @@ export default () => {
   // iconElementLeft={<IconButton><NavigationClose /></IconButton>}
   return (
     <AppBar
-    title={<span>crowdFunder</span>}
+    title={<Link to="/">crowdFunder</Link>}
 
     iconElementRight={
     <div>
-      <Link to="/">
+      <Link to="/project">
+        <IconButton
+           iconClassName="material-icons"
+           iconStyle={bc}
+         >
+           view_module
+
+        </IconButton>
+      </Link>
+
+      <Link to="/test">
         <IconButton
            iconClassName="material-icons"
            iconStyle={bc}

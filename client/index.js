@@ -27,8 +27,8 @@ import routes from './routes';
 
 render(
 <Provider store={store}>
-  <MuiThemeProvider>
+<MuiThemeProvider>
     <Router history={browserHistory} routes={routes} />
-  </MuiThemeProvider>
+</MuiThemeProvider>
 </Provider>
 , document.getElementById('app'));
