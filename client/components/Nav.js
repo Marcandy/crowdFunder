@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 // import "materialize-css"
 
 // import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
@@ -16,6 +17,7 @@ const bc = {
 export default () => {
   // iconElementLeft={<IconButton><NavigationClose /></IconButton>}
   return (
+    <MuiThemeProvider>
     <AppBar
     title={<Link to="/">crowdFunder</Link>}
 
@@ -54,6 +56,7 @@ export default () => {
    </div>
     }
   />
+</MuiThemeProvider>
 // <nav>
 //   <div className="nav-wrapper">
 //     <a href="#!" className="brand-logo"><i className="material-icons">cloud</i>Logo</a>

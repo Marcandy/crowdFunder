@@ -6,7 +6,7 @@ import Home from './components/Home';
 import SignupPage from './components/login/SignupPage';
 import Project from './components/project/Project';
 import Test from './components/project/Test';
-import Project from './components/project/Project';
+
 
 export default (
   <Route path="/" component={App} >
@@ -16,8 +16,8 @@ export default (
     <Route path="signup" component={SignupPage} />
 
 
-    <Route path="project" component={Project}>
-      <Route path="test" component={Test} />
-    </ Route>
+    <Route path="project" component={Project} />
+    <Route path="test" component={Test} />
+
   </Route>
 )
