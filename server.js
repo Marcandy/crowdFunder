@@ -6,7 +6,7 @@ var cors 		= require('cors');
 var config 		= require('./config.js');
 var massive = require('massive');
 
-var app = express();
+var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 let router = express.Router();
@@ -43,8 +43,8 @@ var db = app.get('db');
 // )
 
 
-// var usersCtrl = require('./controllers/usersCtrl') ;
-
+var usersCtrl = require('./server/controllers/usersCtrl') ;
+var projectsCtrl = require('./server/controllers/projectsCtrl') ;
 
 
 
@@ -61,24 +61,10 @@ var db = app.get('db');
 // })
 
 
-app.post('/api/users', function (req, res) {
+app.post('/api/users', usersCtrl.Create);
 
-
-
-  // let { errors, isValid } = validateInput(req.body);
-console.log('helo');
-  // const {username, password, timezone, email} = req.body;
-  db.create_user([req.body.username, req.body.password, req.body.timezone,
-     req.body.email], function (err, result) {
-    if (err) {
-      res.status(500).send(err)
-    }else {
-      res.json({ success: true });
-    }
-
-  })
-})
-
+app.get('/api/projects', projectsCtrl.GetAll)
+app.post('/api/project', projectsCtrl.Create)
 
 
 
