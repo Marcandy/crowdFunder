@@ -1,6 +1,6 @@
 // import React, { Component, PropTypes} from 'react';
 // import { reduxForm } from 'redux-form';
-
+//
 // class Project extends Component {
 //   render() {
 //     const {fields: {title, categories, location}, handleSubmit} = this.props;

@@ -31,6 +31,16 @@ export default () => {
         </IconButton>
       </Link>
 
+      <Link to="/test">
+        <IconButton
+           iconClassName="material-icons"
+           iconStyle={bc}
+         >
+           view_module
+
+        </IconButton>
+      </Link>
+
 
       <Link to="/signup">
         <IconButton

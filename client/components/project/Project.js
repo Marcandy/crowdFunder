@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProjectForm from './ProjectForm';
+import Test from './Test';
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {
@@ -8,7 +9,11 @@ export default class Project extends React.Component {
   // }
   render() {
     return (
-      <ProjectForm  />
+    <div>
+      <ProjectForm />
+      
+    </div>
+
     );
   }
 }
