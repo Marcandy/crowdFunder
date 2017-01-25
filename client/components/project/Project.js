@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectForm from './ProjectForm';
 import Test from './Test';
+import ProjectNav from './projectNav';
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {
@@ -10,8 +11,9 @@ export default class Project extends React.Component {
   render() {
     return (
     <div>
-      <ProjectForm />
-      
+      <ProjectNav />
+      {this.props.children}
+
     </div>
 
     );
