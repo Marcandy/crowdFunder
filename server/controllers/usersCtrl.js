@@ -35,7 +35,7 @@ module.exports = {
         if (err) {
           res.status(500).send(err)
         }else {
-          res.json({ success: true });
+          res.json(result);
         }
 
       })
