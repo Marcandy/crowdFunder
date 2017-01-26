@@ -8,13 +8,22 @@ class Test extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email:''
+      location:'',
+      funding_duration:'',
+      goal:'',
+      description:'',
+      image:'',
+      risks_challenges: ''
     }
   };
   handleSubmit() {
     this.props.updateProject({
-      email:this.state.email,
-      name:this.state.name
+      location:this.state.location,
+      funding_duration:this.state.funding_duration,
+      goal:this.state.goal,
+      description:this.state.description,
+      image:this.state.image,
+      risks_challenges:this.state.risks_challenges,
     })
   };
 
@@ -31,33 +40,41 @@ handleChange(e){
 
 </FormGroup>
 <FormGroup>
-          <Label for="exampleNumber">Number</Label>
-          <Input type="number" name="funding_duration" id="exampleNumber" placeholder="number placeholder" />
+          <Label for="exampleNumber">Funding Duration</Label>
+          <Input type="number" name="funding_duration" id="exampleNumber" placeholder="number placeholder"
+            onChange={this.handleChange.bind(this)}
+            />
         </FormGroup>
   <FormGroup>
             <Label for="exampleEmail">goal</Label>
-              <InputGroup>
+    <InputGroup>
           <InputGroupAddon>$</InputGroupAddon>
-          <Input  name=goal placeholder="Amount" type="number" step="1" />
+          <Input  name='goal' placeholder="Amount" type="number" step="1"
+          onChange={this.handleChange.bind(this)}
+            />
           <InputGroupAddon>.00</InputGroupAddon>
-        </InputGroup>
+    </InputGroup>
   </FormGroup>
 
 <FormGroup>
   <Label for="exampleText">Description</Label>
-  <Input type="textarea" name="description" id="exampleText" />
+  <Input type="textarea" name="description" id="exampleText" onChange={this.handleChange.bind(this)}/>
 </FormGroup>
+
 <FormGroup>
   <Label for="exampleFile">Image</Label>
-  <Input type="file" name="image" id="exampleFile" />
+  <Input type="file" name="image" id="exampleFile" onChange={this.handleChange.bind(this)}/>
   <FormText color="muted">
     This is some placeholder block-level help text for the above input.
     It's a bit lighter and easily wraps to a new line.
   </FormText>
 </FormGroup>
+
 <FormGroup>
-  <Label for="exampleText">Text Area</Label>
-  <Input type="textarea" name="text" id="exampleText" />
+  <Label for="exampleText">Risks Challenges</Label>
+  <Input type="textarea" name="risks_challenges" id="exampleText"
+    onChange={this.handleChange.bind(this)}
+    />
 </FormGroup>
 
 
@@ -65,6 +82,24 @@ handleChange(e){
 
 </Form>
 )
+}
+
+}
+
+function mapStateToProps(state){
+    return {
+      location:state.project.location,
+      funding_duration:state.project.funding_duration,
+      goal:state.project.goal,
+      description:state.project.description,
+      image:state.project.image,
+      risks_challenges:state.project.risks_challenges
+      }
+}
+
+
+const mapDispatchToActionCreator = {
+  updateProject
 }
 
 // goal duration
