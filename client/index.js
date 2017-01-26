@@ -5,7 +5,7 @@ import  thunk  from 'redux-thunk';
 import {createStore, applyMiddleware, compose  } from 'redux';
 import rootReducer from './rootReducer';
 
-import { Router, browserHistory } from "react-router";
+import { Router, browserHistory, hashHistory } from "react-router";
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import $ from "jquery";
 

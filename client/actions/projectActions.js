@@ -2,7 +2,7 @@ import { UPDATE_PROJECT } from "./types";
 import axios from 'axios';
 let baseUrl = 'http://localhost:3000/';
 
-export function updateProject (message) {// action creator
+export function updateProject (projectData) {// action creator
   return {
     type: UPDATE_PROJECT,
     projectData

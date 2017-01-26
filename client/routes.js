@@ -16,8 +16,9 @@ export default (
     <Route path="signup" component={SignupPage} />
 
 
-    <Route path="project" component={Project} />
-    <Route path="test" component={Test} />
+    <Route path="project" component={Project} >
+        <Route path="test" component={Test} />
+      </Route>
 
   </Route>
 )

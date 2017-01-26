@@ -9,6 +9,7 @@ export default (state = project, action = { }) => {
 
   switch (action.type) {
     case UPDATE_PROJECT:
+    console.log(action);
       return Object.assign({}, state, action.projectData )
 
     default: return state

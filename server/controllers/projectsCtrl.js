@@ -14,7 +14,12 @@ module.exports = {
     },
 
     Create: function (req, res) {
-       const {title, shortBlur, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id} = req.body;
+      //  const {title, shortBlur, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id} = req.body;
+      //
+      const {title, shortBlur,user_id} = req.body;
+      const category = '';
+      const location = '';
+
 
       db.create_project([title, shortBlur, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id], function (err, result) {
         if (err) {

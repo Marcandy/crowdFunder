@@ -10,9 +10,11 @@ const initialProject = {title: ''};
 
 export default combineReducers({ // pass Object will all reducers
   flashMessages,
-  projectReducer,
-  form: formReducer,
-  deep: combineForms({
-    project: initialProject
-  }, 'deep')
+  project:projectReducer
+
+
 })
+// form: formReducer,
+// deep: combineForms({
+//   project: initialProject
+// }, 'deep')
