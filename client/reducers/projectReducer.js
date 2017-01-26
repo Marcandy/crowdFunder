@@ -1,9 +1,7 @@
 import {UPDATE_PROJECT} from '../actions/types';
-
-const project = {
-  title: '',
-  desc: ''
-}
+import axios from 'axios';
+let baseUrl = 'http://localhost:3000/';
+const project = {}
 
 export default (state = project, action = { }) => {
 
@@ -11,7 +9,6 @@ export default (state = project, action = { }) => {
     case UPDATE_PROJECT:
     console.log(action);
       return Object.assign({}, state, action.projectData )
-
     default: return state
 
   }

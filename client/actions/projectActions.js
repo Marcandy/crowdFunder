@@ -9,8 +9,8 @@ export function updateProject (projectData) {// action creator
   }
 }
 
-export function saveProject(proj) {
-  return dispatch => {
-    return axios.post(`${baseUrl}api/project`, proj); //return the promise
-  }
-}
+// export function saveProject(proj) {//dont make the project a dispatch it has return an object 
+//   let payload = dispatch => {
+//     return axios.post(`${baseUrl}api/project`, proj); //return the promise
+//   }
+// }

@@ -173,11 +173,14 @@ class SignupForm extends React.Component {
 
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
-      this.props.userSignupRequest(this.state).then(
-        () => {
-          this.props.addUser({
-            // id:res.data.id
-          })
+
+let baseUrl = 'http://localhost:3000/';
+
+      axios.post(`${baseUrl}api/users`, userData).then(
+        response => {
+          this.props.addUser(
+            response.data.id
+          )
           this.props.addFlashMessage({
             type: 'success',
             text: 'You signup'
