@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import { updateProject } from '../../actions/projectActions';
+import { saveProject } from '../../actions/projectActions';
+import {  browserHistory } from "react-router";
 
 import { Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroupAddon } from 'reactstrap';
 
-class Test extends React.Component {
+
+class Test2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +19,8 @@ class Test extends React.Component {
       risks_challenges: ''
     }
   };
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.updateProject({
       location:this.state.location,
       funding_duration:this.state.funding_duration,
@@ -25,6 +29,8 @@ class Test extends React.Component {
       image:this.state.image,
       risks_challenges:this.state.risks_challenges,
     })
+
+    browserHistory.push('/project/finish')
   };
 
 handleChange(e){
@@ -88,6 +94,7 @@ handleChange(e){
 
 function mapStateToProps(state){
     return {
+
       location:state.project.location,
       funding_duration:state.project.funding_duration,
       goal:state.project.goal,
@@ -101,6 +108,8 @@ function mapStateToProps(state){
 const mapDispatchToActionCreator = {
   updateProject
 }
+
+export default connect(mapStateToProps, mapDispatchToActionCreator) (Test2)
 
 // goal duration
 // <FormGroup tag="fieldset">

@@ -6,3 +6,10 @@ export function userSignupRequest(userData) {
     return axios.post(`${baseUrl}api/users`, userData); //return the promise
   }
 }
+
+export function addUser(id){
+  return {
+    type:'SAVE_ID',
+    id
+  }
+}

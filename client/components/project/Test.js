@@ -68,7 +68,7 @@ class Test extends React.Component {
       shortBlurb:this.state.shortBlurb,
       category: this.state.category
     })
-    browserHistory.push('/');
+    browserHistory.push('/project/test2');
   };
 
 handleChange(e){

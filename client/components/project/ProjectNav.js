@@ -12,19 +12,19 @@ export default class App extends React.Component {
 
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/signup">Story</Link></li>
+              <li><Link to="/project/test2">Story</Link></li>
             </ul>
           </div>
 
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/signup">Cover</Link></li>
+              <li><Link to="/project">Cover</Link></li>
             </ul>
           </div>
 
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/signup">Finish</Link></li>
+              <li><Link to="/project">Finish</Link></li>
             </ul>
           </div>
         </div>
