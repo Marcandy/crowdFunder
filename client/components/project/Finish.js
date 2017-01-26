@@ -26,7 +26,7 @@ class Finish extends React.Component {
 
 
   handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     let baseUrl = 'http://localhost:3000/';
 
     // this.props.saveProject(this.state)
@@ -42,10 +42,9 @@ class Finish extends React.Component {
       //  })
     // )
 
-    this.props.saveProject(this.props.project).then(function(res) {
-      return res.data
+    this.props.saveProject(this.props.project).then(function (res) {
+      console.log(res.data);
     })
-
   };
 
   render() {

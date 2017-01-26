@@ -136,6 +136,7 @@ import map from 'lodash/map';
 import classnames from 'classnames';
 import validateInput from '../../../server/shared/validations/signup';
 import TextFieldGroup from '../common/TextFieldGroup';
+import axios from 'axios';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -174,6 +175,7 @@ class SignupForm extends React.Component {
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
 
+//you can actually make this request with user signup request
 let baseUrl = 'http://localhost:3000/';
 
       axios.post(`${baseUrl}api/users`, userData).then(
