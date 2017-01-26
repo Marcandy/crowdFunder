@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router';
 
 export default class App extends React.Component {
   render() {
@@ -6,7 +7,7 @@ export default class App extends React.Component {
       <nav className="navbar navbar-default">
         <div className="container-fluid">
           <div className="navbar-header">
-            <Link to="/" className="navbar-brand">Basic</Link>
+            <Link to="/project/test" className="navbar-brand">Basic</Link>
           </div>
 
           <div className="collapse navbar-collapse">
@@ -31,3 +32,4 @@ export default class App extends React.Component {
 
     )
   }
+}

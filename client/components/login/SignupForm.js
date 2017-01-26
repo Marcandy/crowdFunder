@@ -170,11 +170,14 @@ class SignupForm extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    
+
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       this.props.userSignupRequest(this.state).then(
         () => {
+          this.props.addUser({
+            // id:res.data.id
+          })
           this.props.addFlashMessage({
             type: 'success',
             text: 'You signup'
