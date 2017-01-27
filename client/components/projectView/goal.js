@@ -11,6 +11,6 @@ export default class ProjectGoals extends React.Component{
   }
 }
 
-About.propTypes = {
-  project: PropTypes.project.isRequired
-}
+// ProjectGoals.propTypes = {
+//   project: PropTypes.project.isRequired
+// }
