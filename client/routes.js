@@ -8,6 +8,7 @@ import Project from './components/project/Project';
 import Test from './components/project/Test';
 import Test2 from './components/project/Test2';
 import Finish from './components/project/Finish';
+import ViewContainer from './components/projectView/ViewContainer';
 
 export default (
   <Route path="/" component={App} >
@@ -22,6 +23,8 @@ export default (
         <Route path="test2" component={Test2} />
         <Route path="finish" component={Finish} />
     </Route>
+
+    <Route path="ViewContainer" component={ViewContainer} />
 
   </Route>
 )
