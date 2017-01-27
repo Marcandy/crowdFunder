@@ -1,0 +1,15 @@
+.TopProject{
+  width:100%;height:100vh;
+  display: flex;
+  flex-direction: row;
+  .goal{
+    width:50%;height:50%;
+    background-color: green;
+  }
+  .about{
+    width:50%;height:50%;
+    background-color: red;
+  }
+
+
+}

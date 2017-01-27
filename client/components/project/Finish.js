@@ -3,6 +3,7 @@ import {connect } from 'react-redux';
 import { saveProject } from '../../actions/projectActions';
 // import { saveProject } from '../../reducers/projectReducer';
 import axios from 'axios';
+import {browserHistory } from 'react-router';
 
 import { Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroupAddon } from 'reactstrap';
 
@@ -42,6 +43,13 @@ class Finish extends React.Component {
        .then(response => {
           // this.props.updateProject
           console.log(response.data);
+          // browserHistory.push('/projectView')
+          this.context.router.push({
+            pathname: '/viewContainer',
+            state: {
+              project: this.state
+            }
+          })
        })
     //)
 
@@ -64,6 +72,10 @@ class Finish extends React.Component {
 
     )
   }
+}
+
+Finish.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
 
 // function mapStateToProps(state){

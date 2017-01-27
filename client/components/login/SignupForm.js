@@ -139,7 +139,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import axios from 'axios';
 import { userSignupRequest } from '../../actions/signupActions';
 import { addUser } from '../../actions/signupActions';
-import {connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 class SignupForm extends React.Component {
   constructor(props) {
