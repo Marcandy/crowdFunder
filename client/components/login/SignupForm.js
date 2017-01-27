@@ -137,6 +137,9 @@ import classnames from 'classnames';
 import validateInput from '../../../server/shared/validations/signup';
 import TextFieldGroup from '../common/TextFieldGroup';
 import axios from 'axios';
+import { userSignupRequest } from '../../actions/signupActions';
+import { addUser } from '../../actions/signupActions';
+import {connect } from 'react-redux';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -177,11 +180,14 @@ class SignupForm extends React.Component {
 
 //you can actually make this request with user signup request
 let baseUrl = 'http://localhost:3000/';
-
-      axios.post(`${baseUrl}api/users`, userData).then(
-        response => {
+//the otherway:  this.props.userSignupRequest(this.state).then(
+      //  () => {
+      axios.post(`${baseUrl}api/users`, this.state).then(
+        res => {
+          console.log(res);
           this.props.addUser(
-            response.data.id
+            {user_id: res.data["0"].id}
+
           )
           this.props.addFlashMessage({
             type: 'success',
@@ -263,11 +269,12 @@ let baseUrl = 'http://localhost:3000/';
 
 SignupForm.propTypes = {
   userSignupRequest: React.PropTypes.func.isRequired,
-  addFlashMessage: React.PropTypes.func.isRequired
+  addFlashMessage: React.PropTypes.func.isRequired,
+
 }
 
 SignupForm.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 
-export default SignupForm;
+export default connect( null, {addUser} ) (SignupForm);

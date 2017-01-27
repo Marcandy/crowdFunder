@@ -1,7 +1,8 @@
 import {UPDATE_PROJECT} from '../actions/types';
 import axios from 'axios';
 let baseUrl = 'http://localhost:3000/';
-const project = {}
+
+const project = {};
 
 export default (state = project, action = { }) => {
 

@@ -9,17 +9,18 @@ import { Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroup
 class Finish extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   title:this.props.project.description,
-    //   shortBlurb:this.props.project.shortBlurb,
-    //   category: this.props.project.category,
-    //   location:this.props.project.location,
-    //   funding_duration:this.props.project.funding_duration,
-    //   goal:this.props.project.goal,
-    //   description:this.props.project.description,
-    //   image:this.props.project.image,
-    //   risks_challenges: this.props.project.risks_challenges,
-    // }
+    this.state = {
+      title:this.props.project.description,
+      shortBlurb:this.props.project.shortBlurb,
+      category: this.props.project.category,
+      location:this.props.project.location,
+      funding_duration:this.props.project.funding_duration,
+      goal:this.props.project.goal,
+      description:this.props.project.description,
+      image:this.props.project.image,
+      risks_challenges: this.props.project.risks_challenges,
+      user_id: this.props.user.user_id
+    }
 
   }
 
@@ -34,17 +35,19 @@ class Finish extends React.Component {
     //   console.log(res);
     //   return this.obj= res.data
     // })
-    // this.props.dispatch(
-      //  axios.post(`${baseUrl}api/project`, this.props.project)
-      //  .then(response => {
-      //     // this.props.updateProject
-      //     console.log(response);
-      //  })
-    // )
+    console.log(this.props.user);
 
-    this.props.saveProject(this.props.project).then(function (res) {
-      console.log(res.data);
-    })
+    //this.props.dispatch(//we need user id hen why we using state to comine objesct
+       axios.post(`${baseUrl}api/project`, this.state)
+       .then(response => {
+          // this.props.updateProject
+          console.log(response.data);
+       })
+    //)
+
+    // this.props.saveProject(this.props.project).then(function (res) {
+    //   console.log(res.data); // work but not best unecessary dispatch action
+    // })
   };
 
   render() {
@@ -77,10 +80,10 @@ class Finish extends React.Component {
 // }
 
 
-//
+
 // const mapDispatchToActionCreator = {
 //   saveProject
 // }
 
 
-export default connect( state => ({project: state.project}), {saveProject} ) (Finish)
+export default connect( state => ({project: state.project, user: state.user}), {saveProject} ) (Finish)
