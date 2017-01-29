@@ -24,7 +24,7 @@ export default (
         <Route path="finish" component={Finish} />
     </Route>
 
-    <Route path="ViewContainer" component={ViewContainer} />
+    <Route path="viewContainer" component={ViewContainer} />
 
   </Route>
 )

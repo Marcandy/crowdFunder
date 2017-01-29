@@ -19,7 +19,9 @@ import FlashMessagesList from './flash/FlashMessagesList';
       //   <Nav />
       //   {this.props.children}
       // </MuiThemeProvider>
-      <div className="container">
+      
+      //className="container"
+      <div >
          <Nav />
          <FlashMessagesList />
         {this.props.children}

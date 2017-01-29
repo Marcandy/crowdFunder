@@ -6,11 +6,11 @@ export default class ProjectGoals extends React.Component{
 
   render(){
     return(
-      <div />
+      <div className='about'/>
     )
   }
 }
 
-About.propTypes = {
-  project: PropTypes.project.isRequired
-}
+// ProjectGoals.propTypes = {
+//   project: PropTypes.project.isRequired
+// }

@@ -9,8 +9,8 @@ import { Router, browserHistory, hashHistory } from "react-router";
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import $ from "jquery";
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+// import injectTapEventPlugin from 'react-tap-event-plugin';
+// injectTapEventPlugin();
 
 
 

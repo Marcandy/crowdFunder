@@ -13,3 +13,9 @@ import React from "react";
     )
   }
 }
+
+// <tr>
+//          {this.props.titles.map(function(title) {
+//            return <th key={title}>{title}</th>;
+//          })}
+//        </tr>

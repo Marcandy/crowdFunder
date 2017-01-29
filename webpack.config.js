@@ -32,7 +32,7 @@ module.exports = {
         //   path.join(__dirname, 'server/shared'),
         //   path.join(__dirname, 'server')
         // ],
-        loaders: [ 'babel']
+        loaders: [ 'babel-loader']
       },
       {
         test: /\.scss$/,

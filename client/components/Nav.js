@@ -4,78 +4,130 @@ import { Link } from 'react-router';
 
 // import getMuiTheme from 'material-ui/styles/getMuiTheme';
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+// import getMuiTheme from 'material-ui/styles/getMuiTheme';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+//
+// import AppBar from 'material-ui/AppBar';
+// import IconButton from 'material-ui/IconButton';
+// import NavigationClose from 'material-ui/svg-icons/navigation/close';
+// import FlatButton from 'material-ui/FlatButton';
+// import FontIcon from 'material-ui/FontIcon';
 
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 
-
+import { Icon, Button, Dropdown, Menu } from 'semantic-ui-react';
 
 export default class Nav extends React.Component {
-  getChildContext() {
-              return { muiTheme: getMuiTheme(baseTheme) };
-          }
+  constructor(props) {
+  super(props);
 
+  this.state = { activeItem: 'home' }
 
+  this.handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+}
+    render() {
+      const { activeItem } = this.state
 
-          render() {
-            const bc = {
-              color: "white"
-            }
+      return (
+        <Menu  size='small' icon='labeled'>
 
-              return (
+          <Menu.Item name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
+        <Icon  name='edit' size='small' inverted color='green'/>
+        crowdFunder
+      </Menu.Item>
 
-                    <AppBar
-                    title={<Link to="/">crowdFunder</Link>}
+      <Menu.Item name='video camera' active={activeItem === 'video camera'} onClick={this.handleItemClick}>
 
-                    iconElementRight={
-                    <div>
-                      <Link to="/project">
-                        <IconButton
-                           iconClassName="material-icons"
-                           iconStyle={bc}
-                         >
-                          dashboard
-                        </IconButton>
-                      </Link>
+        <Icon   name='edit' size='small'/>
+        <Link to="/project">
+        Project
+        </Link>
+      </Menu.Item>
 
-                      {/*<Link to="/test">
-                        <IconButton
-                           iconClassName="material-icons"
-                           iconStyle={bc}
-                         >
-                           view_module
+      <Menu.Item name='video play' active={activeItem === 'video play'} onClick={this.handleItemClick}>
+        <Icon name='video play' size='small' />
+        <Link to="/viewContainer">
+        Explore
+      </Link>
+      </Menu.Item>
 
-                        </IconButton>
-                      </Link>*/}
+          <Menu.Menu position='right'>
+            <Dropdown item text='Language'>
+              <Dropdown.Menu>
+                <Dropdown.Item>English</Dropdown.Item>
+                <Dropdown.Item>Russian</Dropdown.Item>
+                <Dropdown.Item>Spanish</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
+            <Menu.Item>
+              <Link to="/signup">
+              <Button  color='green'>Sign Up</Button></Link>
+            </Menu.Item>
+          </Menu.Menu>
+        </Menu>
+      )
+    }
+}
 
-                      <Link to="/signup">
-                        <IconButton
-                           iconClassName="material-icons"
-                           iconStyle={bc}
-                         >
-                           account_circle
-                         </IconButton>
-                      </Link>
+      // Nav.childContextTypes = {
+      //       muiTheme: React.PropTypes.object.isRequired,
+      //   };
 
-                   </div>
-                    }
-                  />
-
-
-              );
-          }
-      }
-
-      Nav.childContextTypes = {
-            muiTheme: React.PropTypes.object.isRequired,
-        };
+        // getChildContext() {
+        //             return { muiTheme: getMuiTheme(baseTheme) };
+        //         }
+        //
+        //
+        //
+        //         render() {
+        //           const bc = {
+        //             color: "white"
+        //           }
+        //
+        //             return (
+        //
+        //                   <AppBar
+        //                   title={<Link to="/">crowdFunder</Link>}
+        //
+        //                   iconElementRight={
+        //                   <div>
+        //                     <Link to="/project">
+        //                       <IconButton
+        //                          iconClassName="material-icons"
+        //                          iconStyle={bc}
+        //                        >
+        //                         dashboard
+        //                       </IconButton>
+        //                     </Link>
+        //
+        //                     {/*<Link to="/test">
+        //                       <IconButton
+        //                          iconClassName="material-icons"
+        //                          iconStyle={bc}
+        //                        >
+        //                          view_module
+        //
+        //                       </IconButton>
+        //                     </Link>*/}
+        //
+        //
+        //                     <Link to="/signup">
+        //                       <IconButton
+        //                          iconClassName="material-icons"
+        //                          iconStyle={bc}
+        //                        >
+        //                          account_circle
+        //                        </IconButton>
+        //                     </Link>
+        //
+        //                  </div>
+        //                   }
+        //                 />
+        //
+        //
+        //             );
+        //         }
 
 // export default () => {
 //   // iconElementLeft={<IconButton><NavigationClose /></IconButton>}
