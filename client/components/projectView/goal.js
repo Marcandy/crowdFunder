@@ -6,7 +6,7 @@ export default class ProjectGoals extends React.Component{
 
   render(){
     return(
-      <div />
+      <div className='about'/>
     )
   }
 }

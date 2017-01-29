@@ -32,7 +32,7 @@ export default class Nav extends React.Component {
         <Menu  size='small' icon='labeled'>
 
           <Menu.Item name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
-        <Icon  name='edit' size='small' color='green'/>
+        <Icon  name='edit' size='small' inverted color='green'/>
         crowdFunder
       </Menu.Item>
 
@@ -62,7 +62,7 @@ export default class Nav extends React.Component {
 
             <Menu.Item>
               <Link to="/signup">
-              <Button primary color='green'>Sign Up</Button></Link>
+              <Button  color='green'>Sign Up</Button></Link>
             </Menu.Item>
           </Menu.Menu>
         </Menu>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './project.scss'
 
-export default class ProjectAbout extends React.Component{
+export default class Media extends React.Component{
 
   render(){
     return(

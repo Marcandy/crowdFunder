@@ -1,13 +1,15 @@
-.TopProject{
-  width:100%;height:100vh;
+.viewContainer{
+  width:100%;
   display: flex;
   flex-direction: row;
+  padding: 0 40px 0 40px;
+
   .goal{
-    width:50%;height:50%;
-    background-color: green;
+    width:25%;height:500px;
+    background-color: #05AF3C;
   }
-  .about{
-    width:50%;height:50%;
+  .media{
+    width:75%;height:500px;
     background-color: red;
   }
 

@@ -1,7 +1,9 @@
-import React from 'react'
-import About from './about.js'
-import Goal from './goal.js'
-import './project.scss'
+import React from 'react';
+import Media from './Media.js';
+import Goal from './goal.js';
+import title from './title.js';
+import content from './content.js';
+import './project.scss';
 import { connect } from 'react-redux';
 //import {bindActionCreators } from 'redux'
 //here import your get all action here getProject
@@ -24,13 +26,24 @@ import { connect } from 'react-redux';
   render(){
     console.log(this.props.user);
     return(
-      <div className='TopProject'>
-       <div className='about'>
-        <About project={this.props.location.state.project} />
+      <div className='viewContainer'>
+
+        <div className='title'>
+
         </div>
-          <div className = 'goal'>
-        <Goal project={this.props.location.state.project}/>
-      </div>
+
+        <div className='media'>
+          <Media project={this.props.location.state.project} />
+        </div>
+
+        <div className = 'goal'>
+          <Goal project={this.props.location.state.project}/>
+        </div>
+
+        <div className = 'projContent'>
+
+        </div>
+
       </div>
     )
   }
