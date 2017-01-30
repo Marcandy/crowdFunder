@@ -40,4 +40,24 @@ module.exports = {
 
       })
     }
+
+    // Login: function (req, res) {
+    //
+    //     res.render('login', { env: process.env });
+    //
+    // },
+    //
+    // Logout: function (req, res) {
+    //   function(req, res){
+    //     req.logout();
+    //     res.redirect('/');
+    //     }
+    // },
+    //
+    // Callback: function (req, res) {
+    //   passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
+    //   function(req, res) {
+    //     res.redirect(req.session.returnTo || '/user');
+    //   }
+    // }
 }

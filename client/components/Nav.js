@@ -62,7 +62,7 @@ export default class Nav extends React.Component {
             </Dropdown>
 
             <Menu.Item>
-              <Link to="/signup">
+              <Link to="/login">
               <Button  color='green'>Sign Up</Button></Link>
             </Menu.Item>
           </Menu.Menu>

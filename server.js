@@ -5,11 +5,14 @@ var cors 		= require('cors');
 // import massive from 'massive';
 var config 		= require('./config.js');
 var massive = require('massive');
+var passport = require('passport');
+var Auth0Strategy = require('passport-auth0');
 
 var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 let router = express.Router();
+var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
 // import webpack from 'webpack';
 // import webpackMiddleware from 'webpack-dev-middleware';
 // import webpackHotMiddleware from 'webpack-hot-middleware';
@@ -41,7 +44,31 @@ var db = app.get('db');
 //     app.set('db', db);
 //   }
 // )
+var strategy = new Auth0Strategy({
+    domain:       config.Auth0.Domain,
+    clientID:      config.Auth0.clientID,
+    clientSecret:  config.Auth0.clientSecret,
+    callbackURL:   process.env.AUTH0_CALLBACK_URL || 'http://localhost:8080/callback'
+  }, function(accessToken, refreshToken, extraParams, profile, done) {
+    // accessToken is the token to call Auth0 API (not needed in the most cases)
+    // extraParams.id_token has the JSON Web Token
+    // profile has all the information from the user
+    return done(null, profile);
+  });
 
+passport.use(strategy);
+
+// This can be used to keep a smaller payload
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 var usersCtrl = require('./server/controllers/usersCtrl') ;
 var projectsCtrl = require('./server/controllers/projectsCtrl') ;
@@ -61,7 +88,25 @@ var projectsCtrl = require('./server/controllers/projectsCtrl') ;
 // })
 
 
-app.post('/api/users', usersCtrl.Create);
+// app.post('/user', usersCtrl.Create);
+
+app.get('/', ensureLoggedIn, function(req, res, next) {
+  res.render('user', { user: req.user });
+});
+
+app.get('/login',  function(req, res){
+  console.log('login');
+    res.render('login', { env: process.env });
+  });
+app.get('/logout',  function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+app.get('/callback', passport.authenticate('auth0', { failureRedirect: '/login' }),
+  function(req, res) {
+    console.log('call');
+    res.redirect(req.session.returnTo || '/');
+  });
 
 app.get('/api/projects', projectsCtrl.GetAll)
 app.post('/api/project', projectsCtrl.Create)
