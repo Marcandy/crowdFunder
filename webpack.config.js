@@ -10,7 +10,7 @@ module.exports = {
   ],
 
   output: {
-    // path.join(__dirname, 'bundle'),
+    // path.join(__dirname, 'bundle'),//have issues with file loader
     path: path.join(__dirname, 'build'),
     publicPath: '/',
      filename: "bundle.js"
@@ -38,16 +38,23 @@ module.exports = {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
       },
-      {test:/\.(jpg|png)$/, loader:"file-loader"},
+      // {test:/\.(jpg|png)$/, loader:"file-loader"},
     //       {
     //     test: /\.png$/,
     //     loader: "url-loader"
     // }
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[hash].[ext]',
+        },
+      }
     ]
 
   },
   resolve: {
-      extensions: ["", ".js", ".css", ".jpg", ".png"]
+      extensions: ["", ".js", ".css"]
   }
 
   ,devServer: {
