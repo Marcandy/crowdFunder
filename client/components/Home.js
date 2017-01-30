@@ -1,8 +1,9 @@
 import React from "react";
 import './home.scss';
 const jumbo = require('./jumbo.jpg');
+const cardImg = require('./jumbo2.png');
 import axios from 'axios';
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Image, Card, Icon} from 'semantic-ui-react'
 
  export default class Home extends React.Component {// will kinda a presentation and functional
 // with grid of project-each are components
@@ -27,13 +28,28 @@ import { Grid, Image } from 'semantic-ui-react'
   render() {
     var  grid = this.state.allProj.map(function (proj) {
       console.log(proj.title);
-      return (<ul>
-        <li>
-
-          <p>{proj.title}: {proj.user_id} </p>
-        </li>
-
-        </ul>)
+      return ( <Card>
+    <Image src={cardImg} />
+    <Card.Content>
+      <Card.Header>
+        proj.title
+      </Card.Header>
+      <Card.Meta>
+        <span className='date'>
+          Joined in 2017
+        </span>
+      </Card.Meta>
+      <Card.Description>
+        Matthew is a musician living in Nashville.
+      </Card.Description>
+    </Card.Content>
+    <Card.Content extra>
+      <a>
+        <Icon name='user' />
+        22 Friends
+      </a>
+    </Card.Content>
+  </Card>)
     })
 
     //{this.props.titles.map(function(title)
@@ -45,12 +61,10 @@ import { Grid, Image } from 'semantic-ui-react'
     <div className='home'>
       <div className="jumbotron">
          <img src={jumbo} alt=""/>
-
-
       </div>
+
       <div>
           {grid}
-
        </div>
     </div>
     )
