@@ -3,7 +3,8 @@ import './home.scss';
 const jumbo = require('./jumbo.jpg');
 const cardImg = require('./jumbo2.png');
 import axios from 'axios';
-import { Segment, Grid, Image, Card, Icon} from 'semantic-ui-react'
+import { Segment, Grid, Image, Icon, Card} from 'semantic-ui-react';
+import { Button, Row, Col, CardTitle } from 'react-materialize'
 
  export default class Home extends React.Component {// will kinda a presentation and functional
 // with grid of project-each are components
@@ -31,28 +32,31 @@ import { Segment, Grid, Image, Card, Icon} from 'semantic-ui-react'
       return (
   <Grid.Column mobile={16} tablet={8} computer={4}   key={i}>
 
-                          <Card color='green'>
-                      <Image src={cardImg} />
-                      <Card.Content>
-                        <Card.Header>
-                          {proj.title}
-                        </Card.Header>
-                        <Card.Meta>
-                          <span className='date'>
-                            Joined in 2017
-                          </span>
-                        </Card.Meta>
-                        <Card.Description>
-                          {proj.description}
-                        </Card.Description>
-                      </Card.Content>
-                      <Card.Content extra>
-                        <a>
-                          <Icon name='user' />
-                          key: {i}
-                        </a>
-                      </Card.Content>
-                    </Card>
+    <Card color='green'>
+    <Image src={cardImg} />
+    <Card.Content>
+    <Card.Header>
+    {proj.title}
+    </Card.Header>
+    <Card.Meta>
+    <span className='date'>
+      Joined in 2017
+    </span>
+    </Card.Meta>
+    <Card.Description>
+    {proj.description}
+    </Card.Description>
+    </Card.Content>
+    <Card.Content extra>
+    <a>
+    <Icon name='user' />
+    key: {i}
+    </a>
+    </Card.Content>
+    </Card>
+
+
+
 </Grid.Column>
 
       )
@@ -85,3 +89,8 @@ import { Segment, Grid, Image, Card, Icon} from 'semantic-ui-react'
 //make an axios post to get everything--save it to a variable
 //then map through that variable to render a grid like thing
 //
+
+// <Card className='small'
+// header={<CardTitle image={cardImg}>Card Title</CardTitle>}
+// actions={[<a href='#'>{proj.user_id}</a>]}>
+// {proj.description}
