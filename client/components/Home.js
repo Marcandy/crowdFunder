@@ -3,7 +3,7 @@ import './home.scss';
 const jumbo = require('./jumbo.jpg');
 const cardImg = require('./jumbo2.png');
 import axios from 'axios';
-import { Grid, Image, Card, Icon} from 'semantic-ui-react'
+import { Segment, Grid, Image, Card, Icon} from 'semantic-ui-react'
 
  export default class Home extends React.Component {// will kinda a presentation and functional
 // with grid of project-each are components
@@ -26,30 +26,36 @@ import { Grid, Image, Card, Icon} from 'semantic-ui-react'
 
    }
   render() {
-    var  grid = this.state.allProj.map(function (proj) {
+    var  grid = this.state.allProj.map(function (proj, i) {
       console.log(proj.title);
-      return ( <Card>
-    <Image src={cardImg} />
-    <Card.Content>
-      <Card.Header>
-        proj.title
-      </Card.Header>
-      <Card.Meta>
-        <span className='date'>
-          Joined in 2017
-        </span>
-      </Card.Meta>
-      <Card.Description>
-        Matthew is a musician living in Nashville.
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
-    </Card.Content>
-  </Card>)
+      return (
+  <Grid.Column mobile={16} tablet={8} computer={4}   key={i}>
+
+                          <Card color='green'>
+                      <Image src={cardImg} />
+                      <Card.Content>
+                        <Card.Header>
+                          {proj.title}
+                        </Card.Header>
+                        <Card.Meta>
+                          <span className='date'>
+                            Joined in 2017
+                          </span>
+                        </Card.Meta>
+                        <Card.Description>
+                          {proj.description}
+                        </Card.Description>
+                      </Card.Content>
+                      <Card.Content extra>
+                        <a>
+                          <Icon name='user' />
+                          key: {i}
+                        </a>
+                      </Card.Content>
+                    </Card>
+</Grid.Column>
+
+      )
     })
 
     //{this.props.titles.map(function(title)
@@ -59,13 +65,18 @@ import { Grid, Image, Card, Icon} from 'semantic-ui-react'
 
     return (
     <div className='home'>
-      <div className="jumbotron">
-         <img src={jumbo} alt=""/>
+      <div className="jumb">
+         <img src={jumbo} alt="dafd" className="test"/>
       </div>
 
-      <div>
+      <div className='grid'>
+        <h1> Featured Projects</h1>
+      <Grid  divided columns={4}>
+
           {grid}
-       </div>
+      </Grid>
+    </div>
+
     </div>
     )
   }

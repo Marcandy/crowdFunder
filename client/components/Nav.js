@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import './nav.scss';
 // import "materialize-css"
 
 // import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -29,7 +30,7 @@ export default class Nav extends React.Component {
       const { activeItem } = this.state
 
       return (
-        <Menu  size='small' icon='labeled'>
+        <Menu  size='small' icon='labeled' id='menu'>
 
           <Menu.Item name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
         <Icon  name='edit' size='small' inverted color='green'/>
