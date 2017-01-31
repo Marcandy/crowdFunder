@@ -19,7 +19,7 @@ import { Button, Row, Col, CardTitle } from 'react-materialize'
   componentWillMount() {
     var self = this;
     let baseUrl = 'http://localhost:3000/';
-    axios.get(`${baseUrl}api/projects`)
+    axios.get(`api/projects`)
     .then(res => {
       console.log(res.data);
       self.setState({ allProj: res.data});

@@ -45,11 +45,12 @@ export default class Nav extends React.Component {
         </Link>
       </Menu.Item>
 
+
       <Menu.Item name='video play' active={activeItem === 'video play'} onClick={this.handleItemClick}>
         <Icon name='video play' size='small' />
-        <Link to="/viewContainer">
-        Explore
-      </Link>
+
+        <a href="http://localhost:8080/auth/me">Explore</a>
+
       </Menu.Item>
 
           <Menu.Menu position='right'>
@@ -64,13 +65,14 @@ export default class Nav extends React.Component {
             <Menu.Item>
               <Link to="/login">
                 </Link>
-              <Button  color='green'> <a href="http://localhost:3000/auth/google">Sign Up</a></Button>
+              <Button  color='green'> <a href="http://localhost:8080/auth/google">Sign Up</a></Button>
             </Menu.Item>
           </Menu.Menu>
         </Menu>
       )
     }
 }
+// <Link to="/viewContainer"></Link>
 
       // Nav.childContextTypes = {
       //       muiTheme: React.PropTypes.object.isRequired,

@@ -39,7 +39,7 @@ class Finish extends React.Component {
     console.log(this.props.user);
 
     //this.props.dispatch(//we need user id hen why we using state to comine objesct
-       axios.post(`${baseUrl}api/project`, this.state)
+       axios.post('/api/project', this.state)
        .then(response => {
           // this.props.updateProject
           console.log(response.data);

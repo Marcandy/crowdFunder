@@ -22,7 +22,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use(express.static('./build'));
+app.use(express.static(__dirname + '/build'));
 
 // import webpack from 'webpack';
 // import webpackMiddleware from 'webpack-dev-middleware';
@@ -48,7 +48,7 @@ var db = app.get('db');
 passport.use(new GoogleStrategy({
   clientID: config.google.clientID,
   clientSecret: config.google.clientSecret,
-  callbackURL: "http://localhost:3000/auth/google/callback",
+  callbackURL: "http://localhost:8080/auth/google/callback",
   profileFields: ['id', 'displayName']
 },
 function(accessToken, refreshToken, profile, cb) {
@@ -67,11 +67,18 @@ function(accessToken, refreshToken, profile, cb) {
 }));
 
 passport.serializeUser(function(user, done) {
-  return done(null, user);
+  console.log(user);
+  return done(null, user.google_id);
 })
 
-passport.deserializeUser(function(user, done) {
-  return done(null, user);
+passport.deserializeUser(function(id, done) {
+  db.getUserBygoogleId([id], function(err, user) {
+    user = user[0];
+    if (err) console.log(err);
+    else console.log('RETRIEVED USER');
+    console.log(user);
+    return done(null, user);
+  })
 })
 
 app.get('/auth/google', passport.authenticate('google',{scope:['https://www.googleapis.com/auth/plus.login',
@@ -80,7 +87,7 @@ app.get('/auth/google', passport.authenticate('google',{scope:['https://www.goog
 }))
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', {successRedirect: 'http://localhost:8080/' }), function(req, res) {
+  passport.authenticate('google', {successRedirect: '/' }), function(req, res) {
     res.status(200).send(req.user);
   })
 
@@ -114,12 +121,17 @@ var projectsCtrl = require('./server/controllers/projectsCtrl') ;
 // app.post('/user', usersCtrl.Create);
 
 
+app.get('/api/user', function(req, res) {
+  if (!req.user) return res.sendStatus(404);
+  res.status(200).send(req.user);
+})
 
 app.get('/api/projects', projectsCtrl.GetAll)
 app.post('/api/project', projectsCtrl.Create)
 
-
-
-app.listen(3000, function () {
-  console.log('Running localhost 3000')
+app.get('*', (req,res)=>{
+  res.sendFile(`${__dirname}/build/index.html`)
+})
+app.listen(8080, function () {
+  console.log('Running localhost 8080')
 })

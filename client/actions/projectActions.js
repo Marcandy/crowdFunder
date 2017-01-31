@@ -1,6 +1,6 @@
 import { UPDATE_PROJECT } from "./types";
 import axios from 'axios';
-let baseUrl = 'http://localhost:3000/';
+// let baseUrl = 'http://localhost:3000/';
 export const CREATE_PROJ = 'CREATE_PROJ';
 
 export function updateProject (projectData) {// action creator
@@ -21,6 +21,6 @@ export function saveProject(proj) {//dont make the project a dispatch it has ret
   // }
 
   return dispatch => {
-    return axios.post(`${baseUrl}api/project`, proj); //return the promise
+    return axios.post(`api/project`, proj); //return the promise
   }
 }
