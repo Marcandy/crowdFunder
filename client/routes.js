@@ -12,15 +12,7 @@ import Test2 from './components/project/Test2';
 import Finish from './components/project/Finish';
 import ViewContainer from './components/projectView/ViewContainer';
 
-// import AuthService from './components/login/AuthService';
-//
-// const auth = new AuthService('OSNC8XIkAXANBQ7Z0kbVoMNsnUOy4NTg', 'marcandy.auth0.com');
-//
-// const requireAuth = (nextState, replace) => {
-//   if (!auth.loggedIn()) {
-//     replace({ pathname: '/login' })
-//   }
-// }
+
 
 export default (
   <Route path="/" component={App}  >

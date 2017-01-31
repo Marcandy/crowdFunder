@@ -1,3 +1,3 @@
-INSERT INTO users (username, password_digest, email )
-VALUES($1, $2, $3, $4)
+INSERT INTO users (username, google_id )
+VALUES($1, $2)
 RETURNING id

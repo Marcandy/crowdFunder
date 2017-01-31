@@ -7,14 +7,7 @@ export class Login extends React.Component {
   constructor(props) {
     super(props)
 
-    this.lock = new Auth0Lock('OSNC8XIkAXANBQ7Z0kbVoMNsnUOy4NTg', 'marcandy.auth0.com',
-     { auth: {
-          redirectUrl: 'http://localhost:8080/callback'
-        , responseType: 'code'
-        , params: {
-          scope: 'openid name email picture'
-        }
-      }});
+
   }
 
   render() {
@@ -23,7 +16,7 @@ export class Login extends React.Component {
       <div >
         <h2>Login</h2>
 
-         {this.lock.show()}
+         
 
       </div>
     )
