@@ -1,16 +1,16 @@
 import axios from 'axios';
-let baseUrl = 'http://localhost:3000/';
+// let baseUrl = 'http://localhost:3000/';
 export const SAVE_ID = 'SAVE_ID';
 
 export function userSignupRequest(userData) {
   return dispatch => {
-    return axios.post(`${baseUrl}api/users`, userData); //return the promise
+    return axios.post(`api/users`, userData); //return the promise
   }
 }
 
-export function addUser(id){
+export function addUser(user){
   return {
     type:'SAVE_ID',
-    id
+    user
   }
 }

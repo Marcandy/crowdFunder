@@ -42,7 +42,7 @@ handleChange(e){
 <Form>
   <FormGroup>
           <Label for="exampleEmail">Location</Label>
-          <Input type="text" name="location" id="exampleEmail" placeholder="title" onChange={this.handleChange.bind(this)}/>
+          <Input type="text" name="location" id="exampleEmail" placeholder="location" onChange={this.handleChange.bind(this)}/>
 
 </FormGroup>
 <FormGroup>

@@ -1,25 +1,28 @@
 var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  devtool:'inline-source-map',
+  // devtool:'source-map',
   entry:[
-    'webpack-dev-server/client?http://127.0.0.1:8080/',
-    'webpack/hot/only-dev-server',
-    './client'
+    // 'webpack/hot/dev-server',
+    // 'webpack-hot-middleware/client?',
+    // 'webpack-hot-middleware/client',
+    // ?path=http://localhost:8080/__webpack_hmr',
+    './client/index.js'
   ],
 
   output: {
     // path.join(__dirname, 'bundle'),//have issues with file loader
-    path: path.join(__dirname, 'build'),
-    publicPath: '/',
-     filename: "bundle.js"
+    path: path.join(__dirname, '/build'),
+    filename: "bundle.js"
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     // new webpack.optimize.OccurenceOrderPlugin(),
+    new HtmlWebpackPlugin({template:'./client/index.html'})
   ],
 
   module: {
@@ -32,7 +35,7 @@ module.exports = {
         //   path.join(__dirname, 'server/shared'),
         //   path.join(__dirname, 'server')
         // ],
-        loaders: [ 'babel-loader']
+        loaders: [ 'babel']
       },
       {
         test: /\.scss$/,
@@ -45,10 +48,10 @@ module.exports = {
     // }
       {
         test: /\.(jpg|png)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[hash].[ext]',
-        },
+        loader: 'file-loader'
+        // options: {
+        //   name: '[path][name].[hash].[ext]',
+        // },
       }
     ]
 
@@ -57,8 +60,8 @@ module.exports = {
       extensions: ["", ".js", ".css"]
   }
 
-  ,devServer: {
-		contentBase: './build'
-		, historyApiFallback: true
-	}
+  // ,devServer: {
+	// 	contentBase: './'
+	// 	, historyApiFallback: true
+	// }
 }
