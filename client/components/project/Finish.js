@@ -10,8 +10,9 @@ import { Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroup
 class Finish extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      title:this.props.project.description,
+      title:this.props.project.title,
       shortBlurb:this.props.project.shortBlurb,
       category: this.props.project.category,
       location:this.props.project.location,
@@ -20,7 +21,7 @@ class Finish extends React.Component {
       description:this.props.project.description,
       image:this.props.project.image,
       risks_challenges: this.props.project.risks_challenges,
-      user_id: this.props.user.user_id
+      user_id: this.props.user.id
     }
 
   }

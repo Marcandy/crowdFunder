@@ -33,8 +33,12 @@ export default class Nav extends React.Component {
         <Menu  size='small' icon='labeled' id='menu'>
 
           <Menu.Item name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
-        <Icon  name='edit' size='small' inverted color='green'/>
+
+        <Icon  name='life ring' size='small' inverted
+           color='green'/>
+         <Link to="/">
         crowdFunder
+        </Link>
       </Menu.Item>
 
       <Menu.Item name='video camera' active={activeItem === 'video camera'} onClick={this.handleItemClick}>
@@ -47,18 +51,18 @@ export default class Nav extends React.Component {
 
 
       <Menu.Item name='video play' active={activeItem === 'video play'} onClick={this.handleItemClick}>
-        <Icon name='video play' size='small' />
+        <Icon name='find' size='small' />
 
         <a href="http://localhost:8080/auth/me">Explore</a>
 
       </Menu.Item>
 
           <Menu.Menu position='right'>
-            <Dropdown item text='Language'>
+            <Dropdown item text='Categories'>
               <Dropdown.Menu>
-                <Dropdown.Item>English</Dropdown.Item>
-                <Dropdown.Item>Russian</Dropdown.Item>
-                <Dropdown.Item>Spanish</Dropdown.Item>
+                <Dropdown.Item>Featured</Dropdown.Item>
+                <Dropdown.Item>Recent</Dropdown.Item>
+                <Dropdown.Item>Oldest</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
 
