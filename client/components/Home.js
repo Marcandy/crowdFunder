@@ -68,20 +68,20 @@ import { Button, Row, Col, CardTitle } from 'react-materialize'
       //  })}
 
     return (
-    <div className='home'>
-      <div className="jumb">
-         <img src={jumbo} alt="dafd" className="test"/>
-      </div>
+        <div className='home'>
+          <div className="jumb">
+             <img src={jumbo} alt="dafd" className="test"/>
+          </div>
 
-      <div className='grid'>
-        <h1> Featured Projects</h1>
-      <Grid  divided columns={4}>
+          <div className='grid'>
+            <h1> Featured Projects</h1>
+          <Grid  divided columns={4}>
 
-          {grid}
-      </Grid>
-    </div>
+              {grid}
+          </Grid>
+        </div>
 
-    </div>
+        </div>
     )
   }
 }

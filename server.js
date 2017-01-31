@@ -102,7 +102,7 @@ app.get('/auth/logout', function(req, res) {
 })
 var usersCtrl = require('./server/controllers/usersCtrl') ;
 var projectsCtrl = require('./server/controllers/projectsCtrl') ;
-
+var stripeCtrl = require('./server/controllers/stripeCtrl')
 
 
 
@@ -118,20 +118,23 @@ var projectsCtrl = require('./server/controllers/projectsCtrl') ;
 // })
 
 
-// app.post('/user', usersCtrl.Create);
+
 
 
 app.get('/api/user', function(req, res) {
-  if (!req.user) return res.sendStatus(404);
+  if (!req.user) return res.status(500).json('error')
   res.status(200).send(req.user);
 })
 
-app.get('/api/projects', projectsCtrl.GetAll)
-app.post('/api/project', projectsCtrl.Create)
+app.get('/api/projects', projectsCtrl.GetAll);
+app.post('/api/project', projectsCtrl.Create);
+app.post('/api/charge', stripeCtrl.Charge);
 
 app.get('*', (req,res)=>{
   res.sendFile(`${__dirname}/build/index.html`)
 })
+
+
 app.listen(8080, function () {
   console.log('Running localhost 8080')
 })
