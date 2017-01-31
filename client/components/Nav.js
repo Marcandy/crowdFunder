@@ -63,7 +63,8 @@ export default class Nav extends React.Component {
 
             <Menu.Item>
               <Link to="/login">
-              <Button  color='green'>Sign Up</Button></Link>
+                </Link>
+              <Button  color='green'> <a href="http://localhost:3000/auth/google">Sign Up</a></Button>
             </Menu.Item>
           </Menu.Menu>
         </Menu>
