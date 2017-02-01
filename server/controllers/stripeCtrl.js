@@ -5,22 +5,24 @@ var stripe = require('stripe')(config.stripe.testKey);
 
 module.exports = {
   Charge: function(req, res,next) {
-  var stripeToken = req.body.stripeToken;
+  // var  lol= JSON.parse(req.body);
   var amount = 200 * 100;
-console.log('stripe');
+console.log(req.body.id, req.body.object, req.body.email);
+console.log(req.body, 'hello' );
   // ensure amount === actual product amount to avoid fraud
-console.log(req.body);
+console.log(req.body.token);
   stripe.customers.create({
-     email: req.body.stripeEmail,
-    source: req.body.stripeToken
+     email: req.body.email,
+    source: req.body.id
   })
   .then(function (customer) {
+    console.log(customer);
     stripe.charges.create({
-      amount,
-      description: "Sample Charge",
+      amount: 500,
+
          currency: "usd",
-         customer: customer.id,
-          card: stripeToken,
+         customer: customer.id
+          // source: 'sk_test_CYHG7Sg19uyLrHQxI0xk6gdH'
     })
   }, function(err, charge) {
       if (err) {

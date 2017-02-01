@@ -9,11 +9,11 @@ export default class StripeView extends React.Component {
 
     // this.charge = axios.post()
   }
+  // JSON.stringify(token)
   onToken(token) {
-  axios.post('/api/charge', {
-    method: 'POST',
-    body: JSON.stringify(token),
-  }).then(token => {
+  axios.post('/api/charge',
+     token
+).then(token => {
     alert(`We are in business, ${token.email}`);
   });
 }
