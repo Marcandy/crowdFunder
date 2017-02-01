@@ -2,6 +2,7 @@ import React from 'react';
 import Media from './Media.js';
 import Goal from './goal.js';
 import Title from './title.js';
+import axios from 'axios';
 import Content from './content.js';
 import './project.scss';
 import { connect } from 'react-redux';

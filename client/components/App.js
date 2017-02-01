@@ -20,11 +20,11 @@ import FlashMessagesList from './flash/FlashMessagesList';
      console.log(this.props.user, 'boom');
      let self =this;
      if(!this.props.user) {
-       axios.get('/api/user').catch(function(error) {
-           console.log(error);
-       })
-       .then(function (res) {
+       axios.get('/api/user').then(function (res) {
          self.props.addUser(res.data);
+       })
+       .catch(function(error) {
+           console.log(error);
        })
      }
    }
