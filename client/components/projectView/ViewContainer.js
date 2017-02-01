@@ -8,7 +8,7 @@ import './project.scss';
 import { connect } from 'react-redux';
 //import {bindActionCreators } from 'redux'
 //here import your get all action here getProject
- class TopProject extends React.Component{
+ class ViewContainer extends React.Component{
 
   // getInitialState() {
   //   return {
@@ -25,11 +25,14 @@ import { connect } from 'react-redux';
   // }
 
   render(){
-    console.log(this.props.user);
+    console.log(this.props.location.state.project);
     return(
       <div className='viewContainer'>
 
-        <div className='title'></div>
+        <div className='title'>
+          <h1>{this.props.location.state.project.title}--- {this.props.location.state.project.projectid}</h1>
+
+        </div>
 
         <div className='top'>
           <div className='media'>
@@ -53,7 +56,7 @@ import { connect } from 'react-redux';
 //   return  bindActionCreators({ getProject }, dispatch);
 // }
 
-export default TopProject;
+export default ViewContainer;
 //export default connect(null, mapDispatchToProps)(PostsIndex);
 // could be just export default connect(null, {getProject})(PostsIndex);
 // it give us access to the method we pass
