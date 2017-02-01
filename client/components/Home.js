@@ -29,6 +29,8 @@ import { Button, Row, Col, CardTitle } from 'react-materialize'
   render() {
     var  grid = this.state.allProj.map(function (proj, i) {
       console.log(proj.title);
+      //onclick = browserHistory.push(`/project/${this.state.id}`)
+
       return (
   <Grid.Column mobile={16} tablet={8} computer={4}   key={i}>
 

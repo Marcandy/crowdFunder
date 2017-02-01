@@ -6,31 +6,27 @@ var stripe = require('stripe')(config.stripe.testKey);
 module.exports = {
   Charge: function(req, res,next) {
   // var  lol= JSON.parse(req.body);
-  var amount = 200 * 100;
-console.log(req.body.id, req.body.object, req.body.email);
+  var amount = req.body.amount * 100;
+
 console.log(req.body, 'hello' );
   // ensure amount === actual product amount to avoid fraud
-console.log(req.body.token);
+
   stripe.customers.create({
      email: req.body.email,
     source: req.body.id
   })
   .then(function (customer) {
-    console.log(customer);
-    stripe.charges.create({
-      amount: 500,
 
+    stripe.charges.create({
+        amount,
          currency: "usd",
          customer: customer.id
           // source: 'sk_test_CYHG7Sg19uyLrHQxI0xk6gdH'
     })
-  }, function(err, charge) {
-      if (err) {
-        console.log(err);
-        res.send('error');
-      } else {
+  }).then(function(charge) {
+
         res.send('success');
-      }
+
     })
   // .then(function( charge) {
   //   // if (err) {
