@@ -15,8 +15,10 @@ import './nav.scss';
 // import FlatButton from 'material-ui/FlatButton';
 // import FontIcon from 'material-ui/FontIcon';
 
-
+import {browserHistory } from 'react-router';
 import { Icon, Button, Dropdown, Menu } from 'semantic-ui-react';
+
+//
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -32,22 +34,23 @@ export default class Nav extends React.Component {
       return (
         <Menu  size='small' icon='labeled' id='menu'>
 
-          <Menu.Item name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
-
+        <Link to="/">
+          <Menu.Item  name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
         <Icon  name='life ring' size='small' inverted
            color='green'/>
-         <Link to="/">
         crowdFunder
-        </Link>
       </Menu.Item>
+      </Link>
 
+      <Link to="/project">
       <Menu.Item name='video camera' active={activeItem === 'video camera'} onClick={this.handleItemClick}>
 
         <Icon   name='edit' size='small'/>
-        <Link to="/project">
+
         Project
-        </Link>
+
       </Menu.Item>
+</Link>
 
 
       <Menu.Item name='video play' active={activeItem === 'video play'} onClick={this.handleItemClick}>
