@@ -44,13 +44,15 @@ class Finish extends React.Component {
        axios.post('/api/project', this.state)
        .then(response => {
           // this.props.updateProject
-          console.log(response.data);
+          console.log(response.data, this.state);
+          let proj = this.state;
+          proj.projectid = response.data[0].projectid;
           // browserHistory.push('/projectView')
           this.context.router.push({
-            let pro
+
             pathname: '/viewContainer',
             state: {
-              project: this.state
+              project: proj
             }
           })
        })

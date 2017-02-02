@@ -24,7 +24,7 @@ console.log( this.props.project, 'itestr');
       // token.amount = this.state.amount;
         axios.post('/api/charge', token ).then( res => {
           console.log(res, this.props.project, 'irir');
-          this.setState({totalfund: res.data[0].totalfund})
+          this.setState({totalfund: res.data[0].totalfund, amount: 0})
 
             console.log(this.state, res.data);
             // this.setState({totalFund: fund})
