@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ProjectForm from './ProjectForm';
 import Test from './Test';
 import ProjectNav from './ProjectNav';
+import
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {
@@ -10,10 +11,12 @@ export default class Project extends React.Component {
   // }
   render() {
     return (
-    <div>
+    <div className='proj'>
       <ProjectNav />
 
+      <div className='form'>
       {this.props.children}
+    </div>
     </div>
 
     );
