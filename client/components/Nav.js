@@ -32,15 +32,11 @@ export default class Nav extends React.Component {
       const { activeItem } = this.state
 
       return (
-        <Menu  size='small' icon='labeled' id='menu'>
+        <Menu  size='large' icon='labeled' id='menu'>
 
-        <Link to="/">
-          <Menu.Item  name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
-        <Icon  name='life ring' size='small' inverted
-           color='green'/>
-        crowdFunder
-      </Menu.Item>
-      </Link>
+
+
+
 
       <Link to="/project">
       <Menu.Item name='video camera' active={activeItem === 'video camera'} onClick={this.handleItemClick}>
@@ -58,7 +54,16 @@ export default class Nav extends React.Component {
 
         <a href="http://localhost:8080/auth/me">Explore</a>
 
+
+
       </Menu.Item>
+<Link to="/" acttive className='title'>
+      <Menu.Item active >
+
+        <h1 ><span className='title1'>Crowd</span>Funder</h1>
+      </Menu.Item>
+      </Link>
+
 
           <Menu.Menu position='right'>
             <Dropdown item text='Categories'>
@@ -79,6 +84,12 @@ export default class Nav extends React.Component {
       )
     }
 }
+// title: <Menu.Item  name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
+// <Icon  name='life ring' size='small' inverted
+//  color='green'/>
+// crowdFunder
+// </Menu.Item>
+
 // <Link to="/viewContainer"></Link>
 
       // Nav.childContextTypes = {
