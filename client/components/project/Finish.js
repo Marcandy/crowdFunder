@@ -21,7 +21,8 @@ class Finish extends React.Component {
       description:this.props.project.description,
       image:this.props.project.image,
       risks_challenges: this.props.project.risks_challenges,
-      user_id: this.props.user.id
+      user_id: this.props.user.id,
+      totalfund: 0
     }
 
   }
@@ -46,6 +47,7 @@ class Finish extends React.Component {
           console.log(response.data);
           // browserHistory.push('/projectView')
           this.context.router.push({
+            let pro
             pathname: '/viewContainer',
             state: {
               project: this.state

@@ -17,7 +17,7 @@ module.exports = {
       //  const {title, shortBlur, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id} = req.body;
       //
       console.log('here')
-      const {title, shortBlurb ,description, user_id, goal} = req.body;
+      const {title, shortBlurb ,description, user_id, goal, totalfund} = req.body;
       var category = '';
       var location = '';
       var category = '';
@@ -30,7 +30,7 @@ module.exports = {
       // var user_id = 4; //for test atm
 
 
-      db.create_project([title, shortBlurb, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id], function (err, result) {
+      db.create_project([title, shortBlurb, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id, totalfund], function (err, result) {
         if (err) {
           console.log(err)
           res.status(500).send(err)

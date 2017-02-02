@@ -8,11 +8,11 @@ export default class StripeView extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            amount: 0
-            // totalFund: this.props.project.totalFund
+            amount: 0,
+            totalfund: this.props.project.totalfund
         }
         // this.charge = axios.post()
-
+console.log( this.props.project, 'itestr');
         this.onToken = this.onToken.bind(this);
     }
     // JSON.stringify(token)
@@ -22,8 +22,11 @@ export default class StripeView extends React.Component {
       token.amount = this.state.amount;
       token.projId = this.props.project.projectid;
       // token.amount = this.state.amount;
-        axios.post('/api/charge', token ).then( (fund) => {
-            alert(`We are in business :)`);
+        axios.post('/api/charge', token ).then( res => {
+          console.log(res, this.props.project, 'irir');
+          this.setState({totalfund: res.data[0].totalfund})
+
+            console.log(this.state, res.data);
             // this.setState({totalFund: fund})
 
         });
@@ -45,7 +48,7 @@ export default class StripeView extends React.Component {
         //   </script>
         // </form>
          <div >
-           <h2>Total: {this.props.project.totalfund} </h2>
+           <h2>Total: {this.state.totalfund} </h2>
            <h4>pledged of: {this.props.project.goal} goal</h4>
 
            <br/>

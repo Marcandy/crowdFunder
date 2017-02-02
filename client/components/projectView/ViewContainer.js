@@ -18,7 +18,7 @@ import { connect } from 'react-redux';
   //   }
   // }
   componentWillMount() {
-    console.log("a good time to fetch post data");
+    console.log(this.props.location.state.project, 'cont view');
   }
 
   // componentDidMount() {
