@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProjectForm from './ProjectForm';
 import Test from './Test';
 import ProjectNav from './ProjectNav';
-import
+import './project.scss';
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {

@@ -1,1 +1,0 @@
-if ( LUX && LUX.doUpdate) LUX.doUpdate("1.02");
