@@ -1,35 +1,31 @@
 import React from "react";
 import { Link } from 'react-router';
+import './project.scss'
 
 export default class App extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar-default projMenu">
         <div className="container-fluid">
+
           <div className="navbar-header">
             <Link to="/project/test" className="navbar-brand">Basic</Link>
           </div>
 
-          <div className="collapse navbar-collapse">
-            <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/project/test2">Story</Link></li>
-            </ul>
+          <div className="navbar-header">
+            <Link to="/project/test2" className="navbar-brand">Story</Link>
           </div>
 
-          <div className="collapse navbar-collapse">
-            <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/project">Cover</Link></li>
-            </ul>
+          <div className="navbar-header">
+            <Link to="/project/test2" className="navbar-brand">Media</Link>
           </div>
 
-          <div className="collapse navbar-collapse">
-            <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/project">Finish</Link></li>
-            </ul>
+          <div className="navbar-header">
+            <Link to="/project/test2" className="navbar-brand">Preview</Link>
           </div>
+
         </div>
       </nav>
-
     )
   }
 }
