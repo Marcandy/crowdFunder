@@ -1,5 +1,6 @@
 var app = require('../../server.js');
 var config = require('../../config.js');
+var db = app.get('db');
 
 var stripe = require('stripe')(config.stripe.testKey);
 
@@ -23,9 +24,16 @@ console.log(req.body, 'hello' );
          customer: customer.id
           // source: 'sk_test_CYHG7Sg19uyLrHQxI0xk6gdH'
     })
-  }).then(function(charge) {
+  }).then(function() {
+      db.update_projectFund([req.body.amount, req.body.projId], function (err, result) {
+        if (err) {
+          console.log(err)
+          res.status(500).send(err)
+        }else {
+          res.status(200).json(result);
+        }
+      })
 
-        res.send('success');
 
     })
   // .then(function( charge) {

@@ -1,7 +1,8 @@
 import React from 'react';
 import Media from './Media.js';
-import Goal from './goal.js';
+// import Goal from './goal.js';
 import Title from './title.js';
+import StripeView from './StripeView.js';
 import axios from 'axios';
 import Content from './content.js';
 import './project.scss';
@@ -39,7 +40,8 @@ import { connect } from 'react-redux';
             <Media project={this.props.location.state.project} />
           </div>
           <div className = 'goal'>
-            <Goal project={this.props.location.state.project}/>
+            <StripeView project={this.props.location.state.project} />
+
           </div>
         </div>
 

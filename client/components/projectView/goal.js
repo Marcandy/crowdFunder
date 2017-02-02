@@ -7,8 +7,9 @@ export default class ProjectGoals extends React.Component{
 
   render(){
     return(
-      <div className='about'>
-          <StripeView />
+    <div className='about'>
+
+          <StripeView project={this.props.location.state.project} />
     </div>
     )
   }
