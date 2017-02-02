@@ -14,6 +14,8 @@ export default class Project extends React.Component {
     <div className='proj'>
       <ProjectNav />
 
+      <video src='https://youtu.be/2zi-41jHvvE' ></video>
+
       <div className='form'>
       {this.props.children}
     </div>
