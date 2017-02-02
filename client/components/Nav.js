@@ -57,12 +57,13 @@ export default class Nav extends React.Component {
 
 
       </Menu.Item>
-<Link to="/" acttive className='title'>
-      <Menu.Item active >
 
+      <Menu.Item  className='title'>
+<Link to="/" >
         <h1 ><span className='title1'>Crowd</span>Funder</h1>
+        </Link>
+
       </Menu.Item>
-      </Link>
 
 
           <Menu.Menu position='right'>

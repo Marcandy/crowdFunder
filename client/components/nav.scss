@@ -12,4 +12,12 @@
   margin-left: 30%;
   font-family: 'Signika', sans-serif;
   font-weight: bold;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+#menu {
+  box-shadow: 0px 4px 10px 0 rgba(22,22,22,0.08)
 }

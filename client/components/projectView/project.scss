@@ -12,6 +12,7 @@
     width:30%;height:500px;
     // background-color: #05AF3C;
     margin:0 10px;
+    position: relative;
   }
   .media{
     width:70%;height:500px;
@@ -29,5 +30,21 @@
   .projContent {
     padding: 0 5em ;
     word-wrap: break-word;
+  }
+
+  .title {
+    margin: 3.8rem 0;
+    padding-left: 15%;
+  }
+}
+
+.stripe {
+  position: absolute;
+  text-align: center;
+  bottom: 25%;
+
+  .ui.green.button {
+    height: 60px;
+    width: 95%;
   }
 }
