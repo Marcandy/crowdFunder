@@ -54,16 +54,15 @@ console.log( this.props.project, 'itestr');
            <br/>
 
 
+    <div className='stripe'>
         <StripeCheckout
           amount={this.state.amount * 100}
-          token={this.onToken} stripeKey="pk_test_J3VU4fHBt40EOdPjkWytAG2W">
-            <Button size='huge' color='green'>
+          token={this.onToken} stripeKey="pk_test_J3VU4fHBt40EOdPjkWytAG2W"
+          className='stripeB'
+          >
+            <Button size='massive' color='green'>
               Back This project
              </Button>
-
-
-
-
         </StripeCheckout>
         <input onChange = {
             e => {
@@ -75,6 +74,8 @@ console.log( this.props.project, 'itestr');
             }
         }
         placeholder = "amount"/>
-    </div>)
+    </div>
+    </div>
+  )
     }
 }
