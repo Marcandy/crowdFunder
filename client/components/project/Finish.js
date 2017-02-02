@@ -21,7 +21,8 @@ class Finish extends React.Component {
       description:this.props.project.description,
       image:this.props.project.image,
       risks_challenges: this.props.project.risks_challenges,
-      user_id: this.props.user.id
+      user_id: this.props.user.id,
+      totalfund: 0
     }
 
   }
@@ -43,12 +44,15 @@ class Finish extends React.Component {
        axios.post('/api/project', this.state)
        .then(response => {
           // this.props.updateProject
-          console.log(response.data);
+          console.log(response.data, this.state);
+          let proj = this.state;
+          proj.projectid = response.data[0].projectid;
           // browserHistory.push('/projectView')
           this.context.router.push({
+
             pathname: '/viewContainer',
             state: {
-              project: this.state
+              project: proj
             }
           })
        })

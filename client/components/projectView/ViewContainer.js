@@ -1,14 +1,15 @@
 import React from 'react';
 import Media from './Media.js';
-import Goal from './goal.js';
+// import Goal from './goal.js';
 import Title from './title.js';
+import StripeView from './StripeView.js';
 import axios from 'axios';
 import Content from './content.js';
 import './project.scss';
 import { connect } from 'react-redux';
 //import {bindActionCreators } from 'redux'
 //here import your get all action here getProject
- class TopProject extends React.Component{
+ class ViewContainer extends React.Component{
 
   // getInitialState() {
   //   return {
@@ -17,7 +18,7 @@ import { connect } from 'react-redux';
   //   }
   // }
   componentWillMount() {
-    console.log("a good time to fetch post data");
+    console.log(this.props.location.state.project, 'cont view');
   }
 
   // componentDidMount() {
@@ -25,18 +26,22 @@ import { connect } from 'react-redux';
   // }
 
   render(){
-    console.log(this.props.user);
+    console.log(this.props.location.state.project);
     return(
       <div className='viewContainer'>
 
-        <div className='title'></div>
+        <div className='title'>
+          <h1>{this.props.location.state.project.title}--- {this.props.location.state.project.projectid}</h1>
+
+        </div>
 
         <div className='top'>
           <div className='media'>
             <Media project={this.props.location.state.project} />
           </div>
           <div className = 'goal'>
-            <Goal project={this.props.location.state.project}/>
+            <StripeView project={this.props.location.state.project} />
+
           </div>
         </div>
 
@@ -53,7 +58,7 @@ import { connect } from 'react-redux';
 //   return  bindActionCreators({ getProject }, dispatch);
 // }
 
-export default TopProject;
+export default ViewContainer;
 //export default connect(null, mapDispatchToProps)(PostsIndex);
 // could be just export default connect(null, {getProject})(PostsIndex);
 // it give us access to the method we pass

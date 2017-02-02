@@ -4,7 +4,8 @@ const jumbo = require('./jumbo.jpg');
 const cardImg = require('./jumbo2.png');
 import axios from 'axios';
 import { Segment, Grid, Image, Icon, Card} from 'semantic-ui-react';
-import { Button, Row, Col, CardTitle } from 'react-materialize'
+import { Button, Row, Col, CardTitle } from 'react-materialize';
+import {browserHistory } from 'react-router';
 
  export default class Home extends React.Component {// will kinda a presentation and functional
 // with grid of project-each are components
@@ -14,8 +15,19 @@ import { Button, Row, Col, CardTitle } from 'react-materialize'
     this.state = {
       allProj: []
     }
-
+    // it's already bound to with context
+    // this.viewChange = this.viewChange.bind(this);
   }
+
+  viewChange(proj) {
+    browserHistory.push({
+      pathname: '/viewContainer',
+      state: {
+        project: proj
+      }
+    })
+  }
+
   componentWillMount() {
     var self = this;
     let baseUrl = 'http://localhost:3000/';
@@ -27,14 +39,15 @@ import { Button, Row, Col, CardTitle } from 'react-materialize'
 
    }
   render() {
+    const self = this;
     var  grid = this.state.allProj.map(function (proj, i) {
       console.log(proj.title);
       //onclick = browserHistory.push(`/project/${this.state.id}`)
 
       return (
-  <Grid.Column mobile={16} tablet={8} computer={4}   key={i}>
+  <Grid.Column mobile={16} tablet={8} computer={4}   key={i} onClick={self.viewChange.bind(self, proj)}>
 
-    <Card color='green'>
+    <Card color='green' >
     <Image src={cardImg} />
     <Card.Content>
     <Card.Header>

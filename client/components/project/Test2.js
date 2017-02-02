@@ -13,7 +13,7 @@ class Test2 extends React.Component {
     this.state = {
       location:'',
       funding_duration:'',
-      goal:'',
+      goal: 0,
       description:'',
       image:'',
       risks_challenges: ''
