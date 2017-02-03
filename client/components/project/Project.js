@@ -3,6 +3,7 @@ import ProjectForm from './ProjectForm';
 import Test from './Test';
 import ProjectNav from './ProjectNav';
 import './project.scss';
+import { Button } from 'semantic-ui-react';
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {
@@ -13,8 +14,13 @@ export default class Project extends React.Component {
     return (
     <div className='proj'>
 
+<ProjectNav />
 
+      <Button id='projB' size='huge' color='green'>
+        Start Your ProjecHuget
+       </Button>
   <div className='projVid'>
+
     <video id="background-video" loop autoPlay>
 <source src="https://d3mlfyygrfdi2i.cloudfront.net/175c/startpage_20130916_supercut_hi.mp4" type="video/mp4" />
 </video>
@@ -31,7 +37,8 @@ export default class Project extends React.Component {
 
 
       <div className='form'>
-      {this.props.children}
+      {
+        this.props.children}
     </div>
     </div>
 
