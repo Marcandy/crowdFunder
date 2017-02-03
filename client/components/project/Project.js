@@ -21,7 +21,7 @@ export default class Project extends React.Component {
        </Button>
   <div className='projVid'>
 
-    <video id="background-video" loop autoPlay>
+    <video id="background-video" loop autoPlay mute>
 <source src="https://d3mlfyygrfdi2i.cloudfront.net/175c/startpage_20130916_supercut_hi.mp4" type="video/mp4" />
 </video>
 

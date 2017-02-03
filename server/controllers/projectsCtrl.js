@@ -17,15 +17,13 @@ module.exports = {
       //  const {title, shortBlur, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id} = req.body;
       //
       console.log('here')
-      const {title, shortBlurb ,description, user_id, goal, totalfund} = req.body;
-      var category = '';
-      var location = '';
-      var category = '';
+      const {title, shortBlurb, description, user_id} = req.body;
+
       var funding_duration = '';
-      // var goal= 0;
+      var goal= 0;
       var totalFund = 0;
-      var image= '';
-      var video= '';
+      var image = '';
+      var video = '';
       var risks_challenges= '';
       // var user_id = 4; //for test atm
 

@@ -5,7 +5,8 @@ export default class Media extends React.Component{
 
   render(){
     return(
-      <div/>
+      <source src={this.props.project.video} type="video/mp4" />
+
     )
   }
 }
