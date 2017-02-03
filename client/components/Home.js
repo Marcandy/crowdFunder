@@ -59,7 +59,7 @@ import {browserHistory } from 'react-router';
     </span>
     </Card.Meta>
     <Card.Description>
-    {proj.description}
+    {proj.shortblurb}
     </Card.Description>
     </Card.Content>
     <Card.Content extra>

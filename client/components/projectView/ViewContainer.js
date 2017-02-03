@@ -44,7 +44,7 @@ import { connect } from 'react-redux';
 
         <br/>
         <div className='content'>
-            <Content />
+            <Content project={this.props.location.state.project} />
         </div>
 
       </div>
