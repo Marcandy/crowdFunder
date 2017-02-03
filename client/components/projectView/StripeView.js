@@ -19,12 +19,13 @@ console.log( this.props.project, 'itestr');
 
     onToken(token) {
       var sel = this;
+      document.getElementById('amount').value = '';
       token.amount = this.state.amount;
       token.projId = this.props.project.projectid;
       // token.amount = this.state.amount;
         axios.post('/api/charge', token ).then( res => {
           console.log(res, this.props.project, 'irir');
-          this.setState({totalfund: res.data[0].totalfund, amount: 0})
+          this.setState({totalfund: res.data[0].totalfund})
 
             console.log(this.state, res.data);
             // this.setState({totalFund: fund})
@@ -64,7 +65,7 @@ console.log( this.props.project, 'itestr');
               Back This project
              </Button>
         </StripeCheckout>
-        <input onChange = {
+        <input id='amount' onChange = {
             e => {
                 e.preventDefault();
                 this.setState({

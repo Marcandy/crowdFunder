@@ -3,7 +3,7 @@ import Media from './Media.js';
 import StripeView from './StripeView.js';
 import axios from 'axios';
 import Content from './content.js';
-import './project.scss';
+import './viewProject.scss';
 import { connect } from 'react-redux';
 //import {bindActionCreators } from 'redux'
 //here import your get all action here getProject

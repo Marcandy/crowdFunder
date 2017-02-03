@@ -16,7 +16,8 @@ app.use(cors());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: config.secret
+  secret: config.secret,
+  cookie: {maxAge: 1000 * 60 * 60 * 24}
 }))
 
 app.use(passport.initialize());

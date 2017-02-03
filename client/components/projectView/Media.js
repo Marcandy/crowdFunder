@@ -1,5 +1,5 @@
 import React from 'react'
-import './project.scss'
+import './viewProject.scss'
 
 export default class Media extends React.Component{
 

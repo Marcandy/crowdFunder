@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import './nav.scss';
+import { connect } from 'react-redux';
 // import "materialize-css"
 
 // import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -20,7 +21,7 @@ import { Icon, Button, Dropdown, Menu } from 'semantic-ui-react';
 
 //
 
-export default class Nav extends React.Component {
+ class Nav extends React.Component {
   constructor(props) {
   super(props);
 
@@ -78,13 +79,19 @@ export default class Nav extends React.Component {
             <Menu.Item>
               <Link to="/login">
                 </Link>
-              <Button  color='green'> <a href="http://localhost:8080/auth/google">Sign Up</a></Button>
+              {
+                this.props.user ? (<Button  color='green'> <a href="http://localhost:8080/auth/logout">Logout</a></Button>)
+                : (
+                  <Button  color='green'> <a href="http://localhost:8080/auth/google">Sign Up</a></Button>) 
+
+              }
             </Menu.Item>
           </Menu.Menu>
         </Menu>
       )
     }
 }
+export default  connect( state => ({user: state.user}), {} ) (Nav)
 // title: <Menu.Item  name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick} >
 // <Icon  name='life ring' size='small' inverted
 //  color='green'/>
