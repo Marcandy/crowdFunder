@@ -12,9 +12,23 @@ export default class Project extends React.Component {
   render() {
     return (
     <div className='proj'>
-      <ProjectNav />
 
-      <video src='https://youtu.be/2zi-41jHvvE' ></video>
+
+  <div className='projVid'>
+    <video id="background-video" loop autoPlay>
+<source src="https://d3mlfyygrfdi2i.cloudfront.net/175c/startpage_20130916_supercut_hi.mp4" type="video/mp4" />
+</video>
+
+
+</div>
+
+
+
+
+
+
+
+
 
       <div className='form'>
       {this.props.children}
@@ -24,3 +38,5 @@ export default class Project extends React.Component {
     );
   }
 }
+
+// <iframe src="https://d3mlfyygrfdi2i.cloudfront.net/175c/startpage_20130916_supercut_hi.mp4" />
