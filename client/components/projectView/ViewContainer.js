@@ -29,8 +29,8 @@ import { connect } from 'react-redux';
       <div className='viewContainer'>
 
         <div className='title'>
-          <h1>{this.props.location.state.project.title}--- {this.props.location.state.project.projectid}</h1>
-
+          <h1>{this.props.location.state.project.title}</h1>
+          <p>{this.props.location.state.project.shortblurb}</p>
         </div>
 
         <div className='top'>

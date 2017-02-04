@@ -20,6 +20,7 @@ class Finish extends React.Component {
       goal:this.props.project.goal,
       description:this.props.project.description,
       image:this.props.project.image,
+      video:this.props.project.video,
       risks_challenges: this.props.project.risks_challenges,
       user_id: this.props.user.id,
       totalfund: 0

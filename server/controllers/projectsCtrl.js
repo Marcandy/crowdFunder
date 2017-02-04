@@ -17,15 +17,32 @@ module.exports = {
       //  const {title, shortBlur, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id} = req.body;
       //
       console.log('here')
-      const {title, shortBlurb, description, user_id} = req.body;
+      const {title, shortBlurb, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id, totalfund} = req.body;
 
-      var funding_duration = '';
-      var goal= 0;
-      var totalFund = 0;
-      var image = '';
-      var video = '';
-      var risks_challenges= '';
-      // var user_id = 4; //for test atm
+      if(!location) {
+        location = '';
+      }
+      if(!funding_duration) {
+        funding_duration = '';
+      }
+      if(!goal) {
+        goal = 0;
+      }
+      if(!image) {
+        image = '';
+      }
+      if(!video) {
+        video = '';
+      }
+      if(!description) {
+        description = '';
+      }
+      if(!risks_challenges) {
+        risks_challenges = '';
+      }
+      if(!user_id) {
+        user_id = 1;
+      }
 
 
       db.create_project([title, shortBlurb, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id, totalfund], function (err, result) {

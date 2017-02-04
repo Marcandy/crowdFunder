@@ -1,3 +1,13 @@
-campaign: the whole story
+import React from 'react'
+import { Menu } from 'semantic-ui-react'
 
-comments; about backers
+class stacticBar = () => {
+  return (
+    <Menu compact>
+      <Menu.Item as='a'>A link</Menu.Item>
+      <Menu.Item link>div Link</Menu.Item>
+    </Menu>
+  )
+}
+
+export default stacticBar

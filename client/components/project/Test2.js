@@ -16,6 +16,7 @@ class Test2 extends React.Component {
       goal: 0,
       description:'',
       image:'',
+      video: '',
       risks_challenges: ''
     }
   };
@@ -27,6 +28,7 @@ class Test2 extends React.Component {
       goal:this.state.goal,
       description:this.state.description,
       image:this.state.image,
+      video:this.state.video,
       risks_challenges:this.state.risks_challenges,
     })
 
@@ -47,7 +49,7 @@ handleChange(e){
 </FormGroup>
 <FormGroup>
           <Label for="exampleNumber">Funding Duration</Label>
-          <Input type="number" name="funding_duration" id="exampleNumber" placeholder="number placeholder"
+          <Input type="number" name="funding_duration" id="exampleNumber" placeholder="number"
             onChange={this.handleChange.bind(this)}
             />
         </FormGroup>
@@ -69,11 +71,19 @@ handleChange(e){
 
 <FormGroup>
   <Label for="exampleFile">Image</Label>
-  <Input type="file" name="image" id="exampleFile" onChange={this.handleChange.bind(this)}/>
+  <Input type="file" name="imageP" id="exampleFile" />
   <FormText color="muted">
-    This is some placeholder block-level help text for the above input.
-    It's a bit lighter and easily wraps to a new line.
+    Upload Project
   </FormText>
+</FormGroup>
+
+<FormGroup>
+        <Input type="text" name="image" id="exampleEmail" placeholder="location" onChange={this.handleChange.bind(this)}/>
+</FormGroup>
+
+<FormGroup>
+        <Label for="exampleEmail">Video</Label>
+        <Input type="text" name="video" id="exampleEmail" placeholder="video" onChange={this.handleChange.bind(this)}/>
 </FormGroup>
 
 <FormGroup>
