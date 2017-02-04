@@ -1,13 +1,26 @@
 .projMenu {
-  width: 60%;
+  width: 25%;
   margin: auto;
-  top: 2rem;
+  top: 3rem;
+  justify-content: center;
+  display: flex;
 }
 
 .form {
-  width: 55%;
+
   margin: auto;
   top: 3rem;
+  // text-align: center;
+  background-image: url('https://static.kickstarter.com/assets/projects/learn/confetti-bg-40ba994a0c5e274aed6897d4bb0c928dc0044e811bdde2846d7f40ef9440ce69.jpg');
+  background-size: cover;
+  height: 90vh;
+
+  .formContent {
+    width: 55%;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
 }
 
 .proj {

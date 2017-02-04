@@ -32,7 +32,7 @@ class Test2 extends React.Component {
       risks_challenges:this.state.risks_challenges,
     })
 
-    browserHistory.push('/project/finish')
+    browserHistory.push('/projectNav/finish')
   };
 
 handleChange(e){
