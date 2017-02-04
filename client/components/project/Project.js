@@ -4,6 +4,7 @@ import Test from './Test';
 import ProjectNav from './ProjectNav';
 import './project.scss';
 import { Button } from 'semantic-ui-react';
+import {Link} from 'react-router';
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {
@@ -14,11 +15,12 @@ export default class Project extends React.Component {
     return (
     <div className='proj'>
 
-<ProjectNav />
 
+      <Link to='projectNav'>
       <Button id='projB' size='huge' color='green'>
-        Start Your ProjecHuget
+          Start Your Project
        </Button>
+       </Link>
   <div className='projVid'>
 
     <video id="background-video" loop autoPlay muted>
@@ -30,15 +32,8 @@ export default class Project extends React.Component {
 
 
 
+      <div >
 
-
-
-
-
-
-      <div className='form'>
-      {
-        this.props.children}
     </div>
     </div>
 

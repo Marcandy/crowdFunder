@@ -5,27 +5,33 @@ import './project.scss'
 export default class App extends React.Component {
   render() {
     return (
+    <div className='form'>
       <nav className="navbar navbar-default projMenu">
         <div className="container-fluid">
 
           <div className="navbar-header">
-            <Link to="/project/test" className="navbar-brand">Basic</Link>
+            <Link to="/projectNav/test" className="navbar-brand">Basic</Link>
           </div>
 
           <div className="navbar-header">
-            <Link to="/project/test2" className="navbar-brand">Story</Link>
+            <Link to="/projectNav/test2" className="navbar-brand">Story</Link>
           </div>
 
           <div className="navbar-header">
-            <Link to="/project/test2" className="navbar-brand">Media</Link>
+            <Link to="/projectNav/test2" className="navbar-brand">Media</Link>
           </div>
 
           <div className="navbar-header">
-            <Link to="/project/test2" className="navbar-brand">Preview</Link>
+            <Link to="/projectNav/test2" className="navbar-brand">Preview</Link>
           </div>
 
         </div>
       </nav>
+
+    <div className='formContent'>
+      {this.props.children}
+    </div>
+    </div>
     )
   }
 }
