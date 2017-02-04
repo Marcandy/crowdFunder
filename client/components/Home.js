@@ -48,7 +48,7 @@ import {browserHistory } from 'react-router';
   <Grid.Column mobile={16} tablet={8} computer={4}   key={i} onClick={self.viewChange.bind(self, proj)}>
 
     <Card color='green' >
-    <Image src={cardImg} />
+    <Image className='cardImg' src={proj.image} />
     <Card.Content>
     <Card.Header>
     {proj.title}
