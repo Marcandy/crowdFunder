@@ -30,7 +30,7 @@ class Test2 extends React.Component {
       risks_challenges:this.state.risks_challenges,
     })
 
-    browserHistory.push('/projectNav/Media')
+    browserHistory.push('/projectNav/media')
   };
 
 handleChange(e){
@@ -67,22 +67,9 @@ handleChange(e){
   <Input type="textarea" name="description" id="exampleText" onChange={this.handleChange.bind(this)}/>
 </FormGroup>
 
-<FormGroup>
-  <Label for="exampleFile">Image</Label>
-  <Input type="file" name="imageP" id="exampleFile" />
-  <FormText color="muted">
-    Upload Project
-  </FormText>
-</FormGroup>
 
-<FormGroup>
-        <Input type="text" name="image" id="exampleEmail" placeholder="location" onChange={this.handleChange.bind(this)}/>
-</FormGroup>
 
-<FormGroup>
-        <Label for="exampleEmail">Video</Label>
-        <Input type="text" name="video" id="exampleEmail" placeholder="video" onChange={this.handleChange.bind(this)}/>
-</FormGroup>
+
 
 <FormGroup>
   <Label for="exampleText">Risks Challenges</Label>
@@ -92,7 +79,7 @@ handleChange(e){
 </FormGroup>
 
 
-<Button onClick={this.handleSubmit.bind(this)}>Submit</Button>
+<Button onClick={this.handleSubmit.bind(this)}>Next</Button>
 
 </Form>
 )
@@ -107,7 +94,6 @@ function mapStateToProps(state){
       funding_duration:state.project.funding_duration,
       goal:state.project.goal,
       description:state.project.description,
-      image:state.project.image,
       risks_challenges:state.project.risks_challenges
       }
 }

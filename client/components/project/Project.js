@@ -5,7 +5,7 @@ import ProjectNav from './ProjectNav';
 import './project.scss';
 import { Button } from 'semantic-ui-react';
 import {Link} from 'react-router';
-const postImg = require('../data/img/home.png')
+const postImg = require('../../data/img/home.png');
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {

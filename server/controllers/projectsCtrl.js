@@ -17,7 +17,7 @@ module.exports = {
       //  const {title, shortBlur, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id} = req.body;
       //
       console.log('here')
-      const {title, shortBlurb, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id, totalfund} = req.body;
+      let {title, shortblurb, category, location, funding_duration, goal, image, video, description, risks_challenges, about_us, user_id, totalfund} = req.body;
 
       if(!location) {
         location = '';
@@ -43,9 +43,15 @@ module.exports = {
       if(!user_id) {
         user_id = 1;
       }
+      if(!about_us) {
+        about_us = '';
+      }
+      if(!totalfund) {
+        totalfund = 0;
+      }
 
 
-      db.create_project([title, shortBlurb, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id, totalfund], function (err, result) {
+      db.create_project([title, shortblurb, category, location, funding_duration, goal, image, video, description, risks_challenges, user_id, totalfund,  about_us], function (err, result) {
         if (err) {
           console.log(err)
           res.status(500).send(err)

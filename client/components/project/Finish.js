@@ -13,17 +13,18 @@ class Finish extends React.Component {
 
     this.state = {
       title:this.props.project.title,
-      shortBlurb:this.props.project.shortBlurb,
+      shortblurb:this.props.project.shortblurb,
       category: this.props.project.category,
       location:this.props.project.location,
       funding_duration:this.props.project.funding_duration,
       goal:this.props.project.goal,
-      description:this.props.project.description,
       image:this.props.project.image,
       video:this.props.project.video,
+      description:this.props.project.description,
       risks_challenges: this.props.project.risks_challenges,
-      user_id: this.props.user.id,
-      totalfund: 0
+      about_us: this.props.project.about_us,
+      totalfund: 0,
+      user_id: this.props.user.id
     }
 
   }
