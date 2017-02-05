@@ -15,8 +15,6 @@ class Test2 extends React.Component {
       funding_duration:'',
       goal: 0,
       description:'',
-      image:'',
-      video: '',
       risks_challenges: ''
     }
   };
@@ -32,7 +30,7 @@ class Test2 extends React.Component {
       risks_challenges:this.state.risks_challenges,
     })
 
-    browserHistory.push('/projectNav/finish')
+    browserHistory.push('/projectNav/Media')
   };
 
 handleChange(e){
