@@ -100,7 +100,7 @@ handleChange(e){
             <option name="category">Food</option>
           </Input>
         </FormGroup>
-          <Button onClick={this.handleSubmit.bind(this)}>Next</Button>
+          <Button color='success' onClick={this.handleSubmit.bind(this)}>Next</Button>
       </Form>
     );
   }

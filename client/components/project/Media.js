@@ -59,7 +59,7 @@ class Media extends React.Component {
         </FormGroup>
 
 
-        <Button onClick={this.handleSubmit.bind(this)}>Next</Button>
+        <Button color='success' onClick={this.handleSubmit.bind(this)}>Next</Button>
       </Form>
     )
   }

@@ -79,7 +79,7 @@ handleChange(e){
 </FormGroup>
 
 
-<Button onClick={this.handleSubmit.bind(this)}>Next</Button>
+<Button color='success' onClick={this.handleSubmit.bind(this)}>Next</Button>
 
 </Form>
 )

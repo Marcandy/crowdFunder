@@ -67,14 +67,25 @@ class Finish extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.project.description}
+      <div className='finish'>
+        <h4> Review </h4>
+        <br/>
+
+          <FormGroup check>
+            <Label check>
+              <Input type="checkbox" />{' '}
+              To infinity
+            </Label>
+          </FormGroup>
+
+
           <br/>
-            <Button onClick={this.handleSubmit.bind(this)}>Submit</Button>
-            <br/>
-        <button onClick={this.handleSubmit.bind(this)}>Create</button>
+
+            <Button color="success" onClick={this.handleSubmit.bind(this)} size="lg" block>Create Project</Button>
+
+
           <br/>
-          <div>{this.obj}</div>
+
       </div>
 
     )
