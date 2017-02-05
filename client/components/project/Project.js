@@ -5,6 +5,7 @@ import ProjectNav from './ProjectNav';
 import './project.scss';
 import { Button } from 'semantic-ui-react';
 import {Link} from 'react-router';
+const postImg = require('../../data/img/home.png');
 
 export default class Project extends React.Component {
   // handleSubmit = function (values) {
@@ -23,7 +24,7 @@ export default class Project extends React.Component {
        </Link>
   <div className='projVid'>
 
-    <video id="background-video" loop autoPlay muted>
+    <video id="background-video" poster={postImg} loop autoPlay muted>
 <source src="https://d3mlfyygrfdi2i.cloudfront.net/175c/startpage_20130916_supercut_hi.mp4" type="video/mp4" />
 </video>
 

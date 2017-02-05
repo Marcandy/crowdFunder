@@ -18,7 +18,7 @@ export default class App extends React.Component {
           </div>
 
           <div className="navbar-header">
-            <Link to="/projectNav/test2" className="navbar-brand">Media</Link>
+            <Link to="/projectNav/media" className="navbar-brand">Media</Link>
           </div>
 
           <div className="navbar-header">

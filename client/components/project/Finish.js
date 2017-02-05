@@ -13,17 +13,18 @@ class Finish extends React.Component {
 
     this.state = {
       title:this.props.project.title,
-      shortBlurb:this.props.project.shortBlurb,
+      shortblurb:this.props.project.shortblurb,
       category: this.props.project.category,
       location:this.props.project.location,
       funding_duration:this.props.project.funding_duration,
       goal:this.props.project.goal,
-      description:this.props.project.description,
       image:this.props.project.image,
       video:this.props.project.video,
+      description:this.props.project.description,
       risks_challenges: this.props.project.risks_challenges,
-      user_id: this.props.user.id,
-      totalfund: 0
+      about_us: this.props.project.about_us,
+      totalfund: 0,
+      user_id: this.props.user.id
     }
 
   }
@@ -66,14 +67,25 @@ class Finish extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.project.description}
+      <div className='finish'>
+        <h4> Review </h4>
+        <br/>
+
+          <FormGroup check>
+            <Label check>
+              <Input type="checkbox" />{' '}
+              To infinity
+            </Label>
+          </FormGroup>
+
+
           <br/>
-            <Button onClick={this.handleSubmit.bind(this)}>Submit</Button>
-            <br/>
-        <button onClick={this.handleSubmit.bind(this)}>Create</button>
+
+            <Button color="success" onClick={this.handleSubmit.bind(this)} size="lg" block>Create Project</Button>
+
+
           <br/>
-          <div>{this.obj}</div>
+
       </div>
 
     )

@@ -52,7 +52,7 @@ class Test extends React.Component {
     super(props);
     this.state = {
       title:'',
-      shortBlurb:'',
+      shortblurb:'',
       category: ''
     }
   };
@@ -66,7 +66,7 @@ class Test extends React.Component {
 
     this.props.updateProject({
       title:this.state.title,
-      shortBlurb:this.state.shortBlurb,
+      shortblurb:this.state.shortblurb,
       category: this.state.category
     })
     browserHistory.push('/projectNav/test2');
@@ -87,7 +87,7 @@ handleChange(e){
         </FormGroup>
         <FormGroup>
           <Label for="examplePassword">shortBlurb</Label>
-          <Input type="text" name="shortBlurb" id="examplePassword" placeholder="blurb" onChange={this.handleChange.bind(this)}/>
+          <Input type="text" name="shortblurb" id="examplePassword" placeholder="blurb" onChange={this.handleChange.bind(this)}/>
 
         </FormGroup>
         <FormGroup>
@@ -100,7 +100,7 @@ handleChange(e){
             <option name="category">Food</option>
           </Input>
         </FormGroup>
-          <Button onClick={this.handleSubmit.bind(this)}>Next</Button>
+          <Button color='success' onClick={this.handleSubmit.bind(this)}>Next</Button>
       </Form>
     );
   }
