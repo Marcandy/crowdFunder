@@ -91,9 +91,15 @@ import {browserHistory } from 'react-router';
           <div className='grid'>
             <h1> Featured Projects</h1>
 
-            <Grid.Column width={13}>
-            <Image src='http://semantic-ui.com/images/wireframe/centered-paragraph.png' />
-          </Grid.Column>
+              <Grid centered >
+                <Grid.Column width={4}>
+                <Image src='http://semantic-ui.com/images/wireframe/image.png' />
+              </Grid.Column>
+              <Grid.Column width={9}>
+                <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+    </Grid>
+
           <Grid  divided columns={4}>
 
               {grid}
