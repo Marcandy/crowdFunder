@@ -98,6 +98,7 @@ handleChange(e){
             <option name="category">Game</option>
             <option name="category">Tech</option>
             <option name="category">Food</option>
+            <option name="category">Technology</option>
           </Input>
         </FormGroup>
           <Button color='success' onClick={this.handleSubmit.bind(this)}>Next</Button>

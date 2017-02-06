@@ -6,6 +6,7 @@ import Content from './content.js';
 import Rewards from './Rewards.js';
 import './viewProject.scss';
 import { connect } from 'react-redux';
+import { Segment } from 'semantic-ui-react'
 
 //import {bindActionCreators } from 'redux'
 //here import your get all action here getProject
@@ -38,13 +39,17 @@ import { connect } from 'react-redux';
         <div className='top'>
           <div className='media'>
             <Media project={this.props.location.state.project} />
+              <Segment.Group horizontal className='segP'>
+                  <Segment>{this.props.location.state.project.category}</Segment>
+                  <Segment>{this.props.location.state.project.location}</Segment>
+                </Segment.Group>
           </div>
           <div className = 'goal'>
             <StripeView project={this.props.location.state.project} />
           </div>
+
         </div>
 
-        <br/>
         <div className='pcontent'>
             <Content project={this.props.location.state.project} />
             <Rewards project={this.props.location.state.project} />

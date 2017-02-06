@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-import { Button } from 'semantic-ui-react';
+import { Button, Progress  } from 'semantic-ui-react';
 
 export default class StripeView extends React.Component {
     constructor(props) {
@@ -49,6 +49,8 @@ console.log( this.props.project, 'itestr');
         //   </script>
         // </form>
          <div className='fundList'>
+           <Progress percent={(this.state.totalfund/this.props.project.goal) *100} indicating color='green'  size='medium' className='pBar' />
+
            <h2>${this.state.totalfund} </h2>
            <h4>pledged of: {this.props.project.goal} goal</h4>
            <br/>
