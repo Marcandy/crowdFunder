@@ -3,8 +3,10 @@ import Media from './Media.js';
 import StripeView from './StripeView.js';
 import axios from 'axios';
 import Content from './content.js';
+import Rewards from './Rewards.js';
 import './viewProject.scss';
 import { connect } from 'react-redux';
+
 //import {bindActionCreators } from 'redux'
 //here import your get all action here getProject
  class ViewContainer extends React.Component{
@@ -45,6 +47,7 @@ import { connect } from 'react-redux';
         <br/>
         <div className='content'>
             <Content project={this.props.location.state.project} />
+            <Rewards project={this.props.location.state.project} />
         </div>
 
       </div>
