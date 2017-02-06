@@ -20,17 +20,6 @@
     margin: 0 10px;
   }
 
-  .content {
-    padding-top: 5em;
-    padding-bottom: 5em;
-    width: 80%;
-
-  }
-
-  .projContent {
-    padding: 0 5em ;
-    word-wrap: break-word;
-  }
 
   .title {
     margin: 3.8rem 0;
@@ -50,4 +39,75 @@
     height: 60px;
     width: 95%;
   }
+
+  #amount {
+    width: 95%;
+    margin-top: 10px;
+  }
+}
+
+.content {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  display: flex;
+
+  .projContent {
+    width: 75%;
+    padding: 0 5em ;
+    word-wrap: break-word;
+  }
+
+  .rewards {
+    height: 310px;
+    width: 25%;
+    font-size: 14px;
+    cursor: pointer;
+    background: #F8F9FD;
+    border: 1px solid #e0e4fb;
+    border-radius: 6px;
+    position: relative;
+    word-break: break-word;
+    z-index: 3;
+    display: block;
+    opacity: 1;
+    margin: 6% 0;
+
+    .rewards-info {
+      // background: #F8F9FD;
+      position: relative;
+      z-index: 1;
+      margin: 0 20px;
+      margin-top: 15%;
+      padding: 20px 0;
+      border-radius: 6px;
+
+
+      h2 {
+        color: #586BE9;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        padding-left: 25%;
+      }
+
+      p {
+        color: #80809E;
+        position: relative;
+        margin-bottom: 20px;
+        height: auto;
+      }
+    }
+  }
+
+
+  .rewards:hover {
+    background: rgba(43,222,115,0.9);
+    font-size: 0px;
+  }
+
+  .rewardContainer {
+    width: 25%;
+  }
+
 }
