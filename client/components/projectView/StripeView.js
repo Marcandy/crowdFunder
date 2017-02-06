@@ -3,10 +3,12 @@ import {connect} from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import { Button, Progress  } from 'semantic-ui-react';
+import {updateFund} from '../../actions/updateFund';
 
-export default class StripeView extends React.Component {
+ class StripeView extends React.Component {
     constructor(props) {
         super(props)
+
         this.state = {
             amount: 0,
             totalfund: this.props.project.totalfund
@@ -25,14 +27,16 @@ console.log( this.props.project, 'itestr');
       // token.amount = this.state.amount;
         axios.post('/api/charge', token ).then( res => {
           console.log(res, this.props.project, 'irir');
-          this.setState({totalfund: res.data[0].totalfund})
+          this.props.updateFund({totalfund: res.data[0].totalfund})
+          // this.setState({totalfund: res.data[0].totalfund})
 
-            console.log(this.state, res.data);
+            console.log(this.props.totalfund, 'hello');
             // this.setState({totalFund: fund})
 
         });
     }
     render() {
+      console.log(this.props.totalfund, 'hello2');
         var inp = (
             <input type="text"></input>
         );
@@ -51,7 +55,7 @@ console.log( this.props.project, 'itestr');
          <div className='fundList'>
            <Progress percent={(this.state.totalfund/this.props.project.goal) *100} indicating color='green'  size='medium' className='pBar' />
 
-           <h2>${this.state.totalfund} </h2>
+           <h2>${this.props.totalfund ? this.props.totalfund.totalfund :  this.state.totalfund } </h2>
            <h4>pledged of: {this.props.project.goal} goal</h4>
            <br/>
            <br/>
@@ -86,3 +90,5 @@ console.log( this.props.project, 'itestr');
   )
     }
 }
+
+export default connect( state => ({totalfund: state.totalfund}), {updateFund}) (StripeView)

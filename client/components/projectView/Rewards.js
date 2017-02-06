@@ -3,8 +3,9 @@ import {connect} from 'react-redux';
 // import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import './viewProject.scss';
+import StripeCheckout from 'react-stripe-checkout';
 
-export default class Rewards extends React.Component {
+ class Rewards extends React.Component {
   constructor(props) {
     super(props)
 
@@ -48,3 +49,5 @@ export default class Rewards extends React.Component {
     )
   }
 }
+
+export default connect( state => ({totalfund: state.totalfund}), {updateFund}) (Rewards)
