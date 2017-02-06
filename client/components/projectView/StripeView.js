@@ -18,6 +18,9 @@ console.log( this.props.project, 'itestr');
         this.onToken = this.onToken.bind(this);
     }
     // JSON.stringify(token)
+    componentWillMount() {
+      this.props.updateFund({totalfund: this.props.project.totalfund})
+    }
 
     onToken(token) {
       var sel = this;
