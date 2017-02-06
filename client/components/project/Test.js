@@ -91,7 +91,7 @@ handleChange(e){
 
         </FormGroup>
         <FormGroup>
-          <Label for="exampleSelect">Categorie</Label>
+          <Label for="exampleSelect">Category</Label>
           <Input type="select" name="category" id="exampleSelect"onChange={this.handleChange.bind(this)}>
             <option name="category">Fun</option>
             <option name="category">Art</option>
