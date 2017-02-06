@@ -1,11 +1,12 @@
 .home {
-  width: 100%
+  width: 100%;
+  position: absolute;
 }
 
 .jumb {
-
   height: 500px;
-  margin: 1px 0 15px;
+  margin-top: 4.5%;
+  margin-bottom: 2%;
 
 
   img {
@@ -26,4 +27,11 @@
 
 .cardImg {
   max-height: 250px;
+}
+
+.posFix {
+
+  position: absolute;
+  width: 100%;
+  top: 9% !important;
 }

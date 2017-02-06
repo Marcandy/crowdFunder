@@ -14,7 +14,7 @@ export default class Project extends React.Component {
   // }
   render() {
     return (
-    <div className='proj'>
+    <div className='proj posFix'>
 
 
       <Link to='projectNav'>

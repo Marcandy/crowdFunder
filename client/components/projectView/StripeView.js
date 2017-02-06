@@ -48,12 +48,14 @@ console.log( this.props.project, 'itestr');
         //     data-locale="auto">
         //   </script>
         // </form>
-         <div >
-           <h2>Total: {this.state.totalfund} </h2>
+         <div className='fundList'>
+           <h2>${this.state.totalfund} </h2>
            <h4>pledged of: {this.props.project.goal} goal</h4>
-
            <br/>
-
+           <br/>
+           <br/>
+           <p className='fundStat'> {this.props.project.funding_duration}</p>
+           <span className='fundStat2'>days to go</span>
 
     <div className='stripe'>
         <StripeCheckout
@@ -76,6 +78,8 @@ console.log( this.props.project, 'itestr');
         }
         placeholder = "amount"/>
     </div>
+
+
     </div>
   )
     }

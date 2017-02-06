@@ -28,7 +28,7 @@ import { connect } from 'react-redux';
   render(){
     console.log(this.props.location.state.project);
     return(
-      <div className='viewContainer'>
+      <div className='viewContainer posFix'>
 
         <div className='title'>
           <h1>{this.props.location.state.project.title}</h1>
@@ -45,7 +45,7 @@ import { connect } from 'react-redux';
         </div>
 
         <br/>
-        <div className='content'>
+        <div className='pcontent'>
             <Content project={this.props.location.state.project} />
             <Rewards project={this.props.location.state.project} />
         </div>

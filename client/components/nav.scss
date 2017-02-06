@@ -2,10 +2,16 @@
 
 #menu {
   margin: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 .title1 {
   color: #2BDE73
+}
+.title2 {
+  color: rgba(15, 33, 5, 1)
 }
 
 .title {
@@ -20,4 +26,19 @@
 
 #menu {
   box-shadow: 0px 4px 10px 0 rgba(22,22,22,0.08)
+}
+
+.logB {
+  font-size: 13.5px !important;
+  margin: auto !important;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.ui.menu .title:before {
+    width: 0;
+    background: white;
 }
