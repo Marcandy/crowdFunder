@@ -1,9 +1,10 @@
 import React from "react";
 import './home.scss';
 const jumbo = require('./jumbo.jpg');
-const cardImg = require('./jumbo2.png');
+const jumbo2 = require('./jumbo2.png');
+const feat = require('./feat.jpg');
 import axios from 'axios';
-import { Segment, Grid, Image, Icon, Card} from 'semantic-ui-react';
+import { Segment, Grid, Image, Icon, Card,  Progress} from 'semantic-ui-react';
 import { Button, Row, Col, CardTitle } from 'react-materialize';
 import {browserHistory } from 'react-router';
 
@@ -17,6 +18,12 @@ import {browserHistory } from 'react-router';
     }
     // it's already bound to with context
     // this.viewChange = this.viewChange.bind(this);
+
+    // problem the axios is not done before getting the state
+    this.only = [];
+     this.only = this.viewChange.bind(this);
+
+     console.log(this.state.allProj, 'image');
   }
 
   viewChange(proj) {
@@ -39,12 +46,18 @@ import {browserHistory } from 'react-router';
 
    }
   render() {
-    const self = this;
-    var  grid = this.state.allProj.map(function (proj, i) {
-      console.log(proj.title);
+    var self = this;
+    console.log(this.state.allProj);
+
+    var arr = this.state.allProj;
+    //.slice(1); // slicing so we can leave the first project as the main featured
+
+    var  grid = arr.map(function (proj, i) {
+
       //onclick = browserHistory.push(`/project/${this.state.id}`)
 
       return (
+
   <Grid.Column mobile={16} tablet={8} computer={4}   key={i} onClick={self.viewChange.bind(self, proj)}>
 
     <Card color='green' >
@@ -77,12 +90,15 @@ import {browserHistory } from 'react-router';
       )
     })
 
+this.only = this.state.allProj.slice(0, 1)[0];
     //{this.props.titles.map(function(title)
     //  {
       //    return <th key={title}>{title}</th>;
       //  })}
+      console.log(this.props, 'props');
 
     return (
+
         <div className='home'>
           <div className="jumb">
              <img src={jumbo} alt="dafd" className="test"/>
@@ -90,12 +106,36 @@ import {browserHistory } from 'react-router';
 
           <div className='grid'>
             <h1> Featured Projects</h1>
-          <Grid  divided columns={4}>
 
-              {grid}
+              <Grid className='mGrid'>
+                <Grid.Column className='gf' width={6}>
+
+                <Image src={feat} />
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <div className="card-block">
+                  <h4 className="card-title">Projects We Love: Dance</h4>
+                  <br/>
+                  <p className="card-text">Liberty Express is a dance, film and cultural exchange project that connects and inspires children all over the world. Dance is a fundamental form of expression that runs through all cultures. It transcends language as well as cultural barriers.</p>
+                  <br/>
+                <Progress percent={60} indicating color='green'  size='medium' className='pBar' />
+
+                <span> Project We Love | Publishing | Aurora, IL </span>
+                </div>
+
+              </Grid.Column>
+    </Grid>
+
+          <Grid className='allG'  divided columns={4}>
+
+            {grid}
           </Grid>
         </div>
 
+        <footer className='footer'>
+          <h1 ><span className='ftitle1'>Crowd</span><span className='ftitle2'>Funder</span></h1>
+          <hr/>
+         </footer>
         </div>
     )
   }

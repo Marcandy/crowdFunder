@@ -61,28 +61,29 @@ import { Icon, Button, Dropdown, Menu } from 'semantic-ui-react';
 
       <Menu.Item  className='title'>
 <Link to="/" >
-        <h1 ><span className='title1'>Crowd</span>Funder</h1>
+        <h1 ><span className='title1'>Crowd</span><span className='title2'>Funder</span></h1>
         </Link>
 
       </Menu.Item>
 
 
           <Menu.Menu position='right'>
-            <Dropdown item text='Categories'>
+            {/*<Dropdown item text='Categories'>
               <Dropdown.Menu>
                 <Dropdown.Item>Featured</Dropdown.Item>
                 <Dropdown.Item>Recent</Dropdown.Item>
                 <Dropdown.Item>Oldest</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+          */}
 
             <Menu.Item>
               <Link to="/login">
                 </Link>
               {
-                this.props.user ? (<Button  color='green'> <a href="http://localhost:8080/auth/logout">Logout</a></Button>)
+                this.props.user ? (<Button className='logB' color='green'> <a href="http://localhost:8080/auth/logout">Logout</a></Button>)
                 : (
-                  <Button  color='green'> <a href="http://localhost:8080/auth/google">Sign Up</a></Button>) 
+                  <Button className='logB' color='green'> <a href="http://localhost:8080/auth/google">Sign Up</a></Button>)
 
               }
             </Menu.Item>

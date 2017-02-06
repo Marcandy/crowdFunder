@@ -9,7 +9,8 @@
     flex-direction: row;
   }
   .goal{
-    width:30%;height:500px;
+    width:30%;
+    // height:500px;
     // background-color: #05AF3C;
     margin:0 10px;
     position: relative;
@@ -18,15 +19,25 @@
     width:70%;height:500px;
     // background-color: red;
     margin: 0 10px;
+    padding: 0 6rem;
   }
 
 
   .title {
     margin: 3.8rem 0;
     padding-left: 15%;
+    font-family: Helvetica;
+
+    p {
+      color: #626369;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+    }
   }
 
-
+  #background-video {
+    height: 427px;
+  }
 
 }
 
@@ -46,20 +57,29 @@
   }
 }
 
-.content {
+.pcontent {
   padding-top: 5em;
   padding-bottom: 5em;
   display: flex;
+  width: 100%;
 
   .projContent {
     width: 75%;
     padding: 0 5em ;
     word-wrap: break-word;
+
+    h3 {
+      font-weight: bold;
+    }
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
   }
 
   .rewards {
     height: 310px;
-    width: 25%;
+    width: 100%;
     font-size: 14px;
     cursor: pointer;
     background: #F8F9FD;
@@ -110,4 +130,49 @@
     width: 25%;
   }
 
+}
+
+.pk_video {
+  background-color: blue !important;
+}
+
+.fundList {
+
+  h2 {
+    color: #05AF3C;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: 500;
+  }
+  h4 {
+    color: #626369;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .fundStat {
+    font-weight: 500;
+    color: #353535;
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+
+  .fundStat2 {
+    line-height: 1.8rem;
+    color: #626369;
+    font-size: 1.4rem;
+  }
+}
+
+.pBar {
+  height: 14px;
+
+  .bar {
+    height: 14px;
+  }
+}
+
+.segP {
+  margin: 0 5%;
+  width: 65%;
 }

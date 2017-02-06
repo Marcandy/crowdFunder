@@ -5,7 +5,7 @@ import './project.scss'
 export default class App extends React.Component {
   render() {
     return (
-    <div className='form'>
+    <div className='form posFix'>
       <nav className="navbar navbar-default projMenu">
         <div className="container-fluid">
 
