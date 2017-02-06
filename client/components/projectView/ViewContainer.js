@@ -29,6 +29,7 @@ import { Segment } from 'semantic-ui-react'
   render(){
     console.log(this.props.location.state.project);
     return(
+
       <div className='viewContainer posFix'>
 
         <div className='title'>
@@ -55,7 +56,14 @@ import { Segment } from 'semantic-ui-react'
             <Rewards project={this.props.location.state.project} />
         </div>
 
+
+        <footer className='vfooter'>
+          <h1 ><span className='ftitle1'>Crowd</span><span className='ftitle2'>Funder</span></h1>
+          <hr/>
+         </footer>
       </div>
+
+
     )
   }
 }

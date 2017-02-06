@@ -124,6 +124,9 @@
   .rewards:hover {
     background: rgba(43,222,115,0.9);
     font-size: 0px;
+    .reB {
+      background: rgba(43,222,115,0.9);
+    }
   }
 
   .rewardContainer {
@@ -175,4 +178,23 @@
 .segP {
   margin: 0 5%;
   width: 65%;
+}
+
+.reB {
+  width: 286px;
+  height: 130px;
+  background: #F8F9FD;
+  border: 0px;
+
+}
+
+// .reB:hover {
+//   background: rgba(43,222,115,0.9);
+// }
+
+.vfooter {
+  width: 110%;
+  height: 300px;
+  background-color: #020621;
+  margin: 2rem -40px 0 -40px;
 }

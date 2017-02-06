@@ -57,9 +57,12 @@
 }
 
 .form-control {
-  line-height: 3.4 !important;
+  // line-height: 3.4 !important;
 }
 
+textarea.form-control {
+  height: 130px;
+}
 .finish {
 
 }

@@ -24,7 +24,7 @@ import {updateFund} from '../../actions/updateFund';
     // token.amount = this.state.amount;
     console.log(token);
     token.projId = this.props.project.projectid;
-    token.amount = 10;
+    token.amount = 25;
       axios.post('/api/charge', token ).then( res => {
         console.log(res, this.props.project, 'irir');
         this.props.updateFund({totalfund: res.data[0].totalfund})
@@ -47,13 +47,6 @@ import {updateFund} from '../../actions/updateFund';
             <p>At this level, we will add your name to the scrolling credits in the scratch versions of our game! See your name scroll past a bucolic campfire setting, in the company of adorable animated marshmallows. </p>
           </div>
 
-          <StripeCheckout
-            amount={10 * 100}
-            token={this.onToken} stripeKey="pk_test_J3VU4fHBt40EOdPjkWytAG2W"
-            className='stripeB'
-            >
-
-          </StripeCheckout>
 
         </div>
 
@@ -63,6 +56,16 @@ import {updateFund} from '../../actions/updateFund';
             <h2> Pledge $25 </h2>
 
             <p>We will list your name on the shout-out page of the website edition of the game! Find your name and click on it, and an animated marshmallow will appear and thank you by name, out loud! </p>
+
+              <StripeCheckout
+                amount={25 * 100}
+                token={this.onToken} stripeKey="pk_test_J3VU4fHBt40EOdPjkWytAG2W"
+                className='stripeB'
+                >
+
+                <button className='reB'> </button>
+              </StripeCheckout>
+
           </div>
 
         </div>
