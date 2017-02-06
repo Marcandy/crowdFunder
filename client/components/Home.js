@@ -108,7 +108,7 @@ this.only = this.state.allProj.slice(0, 1)[0];
             <h1> Featured Projects</h1>
 
               <Grid className='mGrid'>
-                <Grid.Column width={6}>
+                <Grid.Column className='gf' width={6}>
 
                 <Image src={feat} />
               </Grid.Column>
@@ -116,7 +116,7 @@ this.only = this.state.allProj.slice(0, 1)[0];
                 <div className="card-block">
                   <h4 className="card-title">Projects We Love: Dance</h4>
                   <br/>
-                  <p className="card-text">Liberty Express is a dance, film and cultural exchange project that connects and inspires children all over the world.</p>
+                  <p className="card-text">Liberty Express is a dance, film and cultural exchange project that connects and inspires children all over the world. Dance is a fundamental form of expression that runs through all cultures. It transcends language as well as cultural barriers.</p>
                   <br/>
                 <Progress percent={60} indicating color='green'  size='medium' className='pBar' />
 
@@ -126,12 +126,16 @@ this.only = this.state.allProj.slice(0, 1)[0];
               </Grid.Column>
     </Grid>
 
-          <Grid  divided columns={4}>
+          <Grid className='allG'  divided columns={4}>
 
             {grid}
           </Grid>
         </div>
 
+        <footer className='footer'>
+          <h1 ><span className='ftitle1'>Crowd</span><span className='ftitle2'>Funder</span></h1>
+          <hr/>
+         </footer>
         </div>
     )
   }

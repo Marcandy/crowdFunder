@@ -22,6 +22,7 @@
 .grid {
   h1 {
     text-align: center;
+    color: #020621;
   }
 }
 
@@ -37,11 +38,45 @@
 }
 
 .mGrid {
-  margin: 5rem !important;
-    width: 85%;
-    margin-left: 17rem !important;
 
-    p span {
+    width: 90%;
+    // height: 300px !important;
+    margin: 3% 8% 3% 7% !important;
+    padding-left: 2% !important;
+    background: #F8F9FD;
+    border: 1px solid #e0e4fb;
+
+    .gf{
+      width: 50% !important;
+    }
+
+    p {
       color: #3D3D66;
     }
+    span {
+      color: #3D3D66;
+    }
+}
+
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: #020621;
+  margin: 5rem 0 0;
+}
+
+.allG {
+  padding: 0 1% 0 3%;
+}
+
+footer {
+  text-align: center;
+  padding: 10%;
+}
+.ftitle1 {
+  color: 	#2BDE73
+}
+
+.ftitle2 {
+  color: 	white
 }
