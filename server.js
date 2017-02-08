@@ -19,6 +19,7 @@ app.use(session({
   secret: config.secret,
   cookie: {maxAge: 1000 * 60 * 60 * 24}
 }))
+app.set('port', (process.env.PORT || 8080));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -136,6 +137,6 @@ app.get('*', (req,res)=>{
 })
 
 
-app.listen(8080, function () {
+app.listen(app.get('port'), function () {
   console.log('Running localhost 8080')
 })
