@@ -75,7 +75,8 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(user, done) {
   console.log(user, 'des');
-  db.getUserBygoogleId([user.google_id], function(err, user) {
+  //possible to add a statement if user google id
+  db.getUserBygoogleId([user.google_id], function(err, user)  {//was causing errors because we did not return google_id in the db .create
     user = user[0];
     if (err) console.log(err);
     else console.log('RETRIEVED USER');
