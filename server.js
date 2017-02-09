@@ -69,8 +69,8 @@ function(accessToken, refreshToken, profile, cb) {
 }));
 
 passport.serializeUser(function(user, done) {
-  // console.log(user, 'se');
-  return done(null, user);
+  console.log(user, 'seeee');
+  return done(null, user.google_id);
 })
 
 passport.deserializeUser(function(user, done) {
@@ -81,7 +81,7 @@ passport.deserializeUser(function(user, done) {
     user = user[0];
     if (err) console.log(err);
     else console.log('RETRIEVED USER');
-    console.log(user);
+    
     return done(null, user);
   })
 })
