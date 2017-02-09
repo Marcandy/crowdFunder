@@ -138,5 +138,5 @@ app.get('*', (req,res)=>{
 
 
 app.listen(app.get('port'), function () {
-  console.log('Running localhost 8080')
+  console.log('Running localhost', app.get('port'))
 })
