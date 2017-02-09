@@ -1,2 +1,1 @@
-select * from users
-where google_id = $1;
+select * from userswhere google_id = $1;
