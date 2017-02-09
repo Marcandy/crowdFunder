@@ -53,7 +53,7 @@ import { Icon, Button, Dropdown, Menu } from 'semantic-ui-react';
       <Menu.Item name='video play' active={activeItem === 'video play'} onClick={this.handleItemClick}>
         <Icon name='find' size='small' />
 
-        <a href="http://localhost:8080/auth/me">Explore</a>
+        <a href="/auth/me">Explore</a>
 
 
 
