@@ -1,5 +1,5 @@
 module.exports = {
-  connectionString : "postgres://massive:Forces$57@localhost/crowdFund",
+  connectionString : "postgres://vvlpicwn:71giQBRrd-tpDa6Nttqts0uwwsnxIG-j@babar.elephantsql.com:5432/vvlpicwn",
   secret: 'adjlfdljlafj$alfja&sdkfj9$fjldsajfZ',
   google: {
     clientID: '544815591077-2rbo838gq6ikfkkhr4qah8iob9533cjc.apps.googleusercontent.com',
