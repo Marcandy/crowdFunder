@@ -69,7 +69,7 @@ function(accessToken, refreshToken, profile, cb) {
 }));
 
 passport.serializeUser(function(user, done) {
-  console.log(user);
+  console.log(user, 'se');
   return done(null, user);
 })
 
