@@ -50,7 +50,7 @@ var db = app.get('db');
 passport.use(new GoogleStrategy({
   clientID: config.google.clientID,
   clientSecret: config.google.clientSecret,
-  callbackURL: "http://localhost:8080/auth/google/callback",
+  callbackURL: "/auth/google/callback",
   profileFields: ['id', 'displayName']
 },
 function(accessToken, refreshToken, profile, cb) {
