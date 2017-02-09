@@ -1,1 +1,1 @@
-web: nodemon server.js webpack --watch
+web: node server.js

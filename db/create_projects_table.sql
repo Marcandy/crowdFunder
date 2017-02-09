@@ -10,5 +10,7 @@ CREATE TABLE projects (
   video text,
   description text,
   risks_challenges text,
-  user_id INTEGER REFERENCES users
+  user_id INTEGER REFERENCES users,
+  totalfund INTEGER,
+  about_us text
     )

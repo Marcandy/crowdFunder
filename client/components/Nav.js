@@ -53,7 +53,7 @@ import { Icon, Button, Dropdown, Menu } from 'semantic-ui-react';
       <Menu.Item name='video play' active={activeItem === 'video play'} onClick={this.handleItemClick}>
         <Icon name='find' size='small' />
 
-        <a href="http://localhost:8080/auth/me">Explore</a>
+        <a href="/auth/me">Explore</a>
 
 
 
@@ -81,9 +81,9 @@ import { Icon, Button, Dropdown, Menu } from 'semantic-ui-react';
               <Link to="/login">
                 </Link>
               {
-                this.props.user ? (<Button className='logB' color='green'> <a href="http://localhost:8080/auth/logout">Logout</a></Button>)
+                this.props.user ? (<Button className='logB' color='green'> <a href="/auth/logout">Logout</a></Button>)
                 : (
-                  <Button className='logB' color='green'> <a href="http://localhost:8080/auth/google">Sign Up</a></Button>)
+                  <Button className='logB' color='green'> <a href="/auth/google">Sign Up</a></Button>)
 
               }
             </Menu.Item>

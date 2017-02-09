@@ -19,6 +19,7 @@ app.use(session({
   secret: config.secret,
   cookie: {maxAge: 1000 * 60 * 60 * 24}
 }))
+app.set('port', (process.env.PORT || 8080));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,7 +50,7 @@ var db = app.get('db');
 passport.use(new GoogleStrategy({
   clientID: config.google.clientID,
   clientSecret: config.google.clientSecret,
-  callbackURL: "http://localhost:8080/auth/google/callback",
+  callbackURL: "/auth/google/callback",
   profileFields: ['id', 'displayName']
 },
 function(accessToken, refreshToken, profile, cb) {
@@ -59,7 +60,7 @@ function(accessToken, refreshToken, profile, cb) {
       console.log('CREATING USER');
       db.create_user([profile.displayName, profile.id], function(err, user) {
         console.log('USER CREATED', user);
-        return cb(err, user);
+        return cb(err, user[0]);//add the index because we are creating an user and it return it in an array
       })
     } else {
       return cb(err, user);
@@ -68,16 +69,19 @@ function(accessToken, refreshToken, profile, cb) {
 }));
 
 passport.serializeUser(function(user, done) {
-  console.log(user);
+  console.log(user, 'seeee');
   return done(null, user.google_id);
 })
 
 passport.deserializeUser(function(id, done) {
-  db.getUserBygoogleId([id], function(err, user) {
+  console.log(id, 'desttt');
+  //..possible to add a statement. if we have user google id
+  db.getUserBygoogleId([id], function(err, user)  {//was causing errors because we did not return google_id in the db .create
+    console.log(user, 'after');
     user = user[0];
     if (err) console.log(err);
     else console.log('RETRIEVED USER');
-    console.log(user);
+
     return done(null, user);
   })
 })
@@ -136,6 +140,6 @@ app.get('*', (req,res)=>{
 })
 
 
-app.listen(8080, function () {
-  console.log('Running localhost 8080')
+app.listen(app.get('port'), function () {
+  console.log('Running localhost', app.get('port'))
 })
