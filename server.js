@@ -70,11 +70,12 @@ function(accessToken, refreshToken, profile, cb) {
 
 passport.serializeUser(function(user, done) {
   console.log(user);
-  return done(null, user.google_id);
+  return done(null, user);
 })
 
-passport.deserializeUser(function(id, done) {
-  db.getUserBygoogleId([id], function(err, user) {
+passport.deserializeUser(function(user, done) {
+  console.log(user, 'des');
+  db.getUserBygoogleId([user.id], function(err, user) {
     user = user[0];
     if (err) console.log(err);
     else console.log('RETRIEVED USER');
