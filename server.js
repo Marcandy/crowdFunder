@@ -60,7 +60,7 @@ function(accessToken, refreshToken, profile, cb) {
       console.log('CREATING USER');
       db.create_user([profile.displayName, profile.id], function(err, user) {
         console.log('USER CREATED', user);
-        return cb(err, user);
+        return cb(err, user[0]);//add the index because we are creating an user and it return it in an array
       })
     } else {
       return cb(err, user);
