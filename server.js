@@ -75,7 +75,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(user, done) {
   console.log(user, 'des');
-  db.getUserBygoogleId([user.id], function(err, user) {
+  db.getUserBygoogleId([user.google_id], function(err, user) {
     user = user[0];
     if (err) console.log(err);
     else console.log('RETRIEVED USER');
