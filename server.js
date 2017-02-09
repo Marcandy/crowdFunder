@@ -69,14 +69,15 @@ function(accessToken, refreshToken, profile, cb) {
 }));
 
 passport.serializeUser(function(user, done) {
-  console.log(user, 'se');
+  // console.log(user, 'se');
   return done(null, user);
 })
 
 passport.deserializeUser(function(user, done) {
   console.log(user, 'des');
   //possible to add a statement. if we have user google id
-  db.getUserBygoogleId([user[0].google_id], function(err, user)  {//was causing errors because we did not return google_id in the db .create
+  db.getUserBygoogleId([user.google_id], function(err, user)  {//was causing errors because we did not return google_id in the db .create
+    console.log(user, 'after');
     user = user[0];
     if (err) console.log(err);
     else console.log('RETRIEVED USER');
