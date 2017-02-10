@@ -1,3 +1,9 @@
+config
+
+#hide config when pushing to github -- but dont hide it when pushing pushing to heroku
+
+
+
 node_modules
 log.md
 npm-debug.log
