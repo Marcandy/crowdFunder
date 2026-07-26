@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private planning notes — never commit
+CLAUDE.local.md
+REWRITE_PLAN.md
