@@ -22,8 +22,12 @@ export default function DashboardPage() {
           Once sign-in and the projects domain land, this page lists your
           projects with live totals and the people who backed them.
         </p>
-        <Button asChild className="mt-4" variant="outline">
-          <Link href="/discover">Browse projects</Link>
+        <Button
+          render={<Link href="/discover" />}
+          className="mt-4"
+          variant="outline"
+        >
+          Browse projects
         </Button>
       </div>
     </div>

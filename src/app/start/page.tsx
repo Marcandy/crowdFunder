@@ -15,8 +15,8 @@ export default function StartPage() {
         The create form (save a draft, then publish when it passes the gate)
         arrives with the Day 2 projects domain.
       </p>
-      <Button asChild className="mt-6" variant="outline">
-        <Link href="/">Back home</Link>
+      <Button render={<Link href="/" />} className="mt-6" variant="outline">
+        Back home
       </Button>
     </div>
   );

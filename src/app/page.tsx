@@ -20,11 +20,11 @@ export default function Home() {
           off the ground — or discover something worth backing today.
         </p>
         <div className="mt-6 flex justify-center gap-3">
-          <Button asChild size="lg">
-            <Link href="/start">Start a project</Link>
+          <Button render={<Link href="/start" />} size="lg">
+            Start a project
           </Button>
-          <Button asChild size="lg" variant="outline">
-            <Link href="/discover">Discover projects</Link>
+          <Button render={<Link href="/discover" />} size="lg" variant="outline">
+            Discover projects
           </Button>
         </div>
       </section>

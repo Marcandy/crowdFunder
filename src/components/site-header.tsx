@@ -10,15 +10,15 @@ export function SiteHeader() {
           crowd<span className="text-emerald-600">Funder</span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/discover">Discover</Link>
+          <Button render={<Link href="/discover" />} variant="ghost" size="sm">
+            Discover
           </Button>
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/start">Start a project</Link>
+          <Button render={<Link href="/start" />} variant="ghost" size="sm">
+            Start a project
           </Button>
           {/* Swapped for a session-aware menu once Auth.js lands (Day 1 PM) */}
-          <Button asChild size="sm">
-            <Link href="/login">Sign in</Link>
+          <Button render={<Link href="/login" />} size="sm">
+            Sign in
           </Button>
         </nav>
       </div>
